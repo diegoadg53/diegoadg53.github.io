@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brazo robótico con visión · Diego Duarte</title>
+  <meta name="title-es" content="Brazo robótico con visión · Diego Duarte">
+  <meta name="title-en" content="Vision-guided robotic arm · Diego Duarte">
+  <meta name="description" content="Caso de estudio: brazo robótico de 5 GDL que clasifica piezas sobre una banda en movimiento con YOLO11-seg, STM32, Portenta H7 y ESP32.">
+  <meta property="og:title" content="5-DOF vision-guided sorting arm · Diego Duarte">
+  <meta property="og:description" content="Mechanics, firmware, kinematics, control and computer vision, built from scratch.">
+  <meta property="og:image" content="https://diegoadg53.github.io/assets/img/arm/arm-final.webp">
+  <meta name="theme-color" content="#0c1a2f">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <script>
+    (function () { var l; try { l = localStorage.getItem('lang'); } catch (e) {}
+      if (!l) l = (navigator.language || 'es').toLowerCase().indexOf('es') === 0 ? 'es' : 'en';
+      document.documentElement.setAttribute('data-lang', l); document.documentElement.setAttribute('lang', l); })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Saltar al contenido</a>
+
+  <header class="nav">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Inicio">
+        <span class="brand-mark">DD</span>
+        <span class="brand-name">Diego Duarte</span>
+      </a>
+      <nav class="nav-links" aria-label="Principal">
+        <a href="index.html#proyectos"><span lang="es">Proyectos</span><span lang="en">Projects</span></a>
+        <a href="index.html#experiencia"><span lang="es">Experiencia</span><span lang="en">Experience</span></a>
+        <a href="index.html#habilidades"><span lang="es">Habilidades</span><span lang="en">Skills</span></a>
+        <a href="index.html#contacto"><span lang="es">Contacto</span><span lang="en">Contact</span></a>
+      </nav>
+      <div class="nav-actions">
+        <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+          <button type="button" data-set-lang="es" aria-pressed="true">ES</button>
+          <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="btn btn-primary btn-sm" href="assets/docs/CV_DiegoDuarte.pdf" target="_blank" rel="noopener">CV</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ================= HERO ================= -->
+    <section class="hero case-hero">
+      <div class="container">
+        <div>
+          <a class="back" href="index.html">← <span lang="es">Volver al portafolio</span><span lang="en">Back to portfolio</span></a>
+          <div class="eyebrow"><span lang="es">Caso de estudio · Tesis de licenciatura</span><span lang="en">Case study · Bachelor's thesis</span></div>
+          <h1>
+            <span lang="es">Brazo robótico de 5 GDL que <em>ve, decide y clasifica</em> piezas en movimiento</span>
+            <span lang="en">A 5-DOF arm that <em>sees, decides and sorts</em> moving parts</span>
+          </h1>
+          <p class="hero-lead" lang="es">Diseñé, construí y programé un brazo que recoge piezas de una banda transportadora en movimiento y deposita cada una en su contenedor según lo que reconoce una cámara. Lo hice completo, desde la estructura hasta el modelo de visión.</p>
+          <p class="hero-lead" lang="en">I designed, built and programmed an arm that picks parts from a moving conveyor and drops each one into its bin based on what a camera recognizes. I did all of it, from the structure to the vision model.</p>
+          <dl class="meta">
+            <div><dt lang="es">Rol</dt><dt lang="en">Role</dt>
+              <dd lang="es">Autor único: mecánica, electrónica, firmware y visión</dd><dd lang="en">Sole author: mechanics, electronics, firmware, vision</dd></div>
+            <div><dt lang="es">Lugar</dt><dt lang="en">Where</dt>
+              <dd lang="es">Laboratorio de Diseño de Procesos, UVG</dd><dd lang="en">Process Design Lab, UVG</dd></div>
+            <div><dt>Stack</dt><dd>C/C++ · Python · STM32 · Portenta H7 · ESP32</dd></div>
+            <div><dt lang="es">Año</dt><dt lang="en">Year</dt><dd>2026</dd></div>
+          </dl>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="https://github.com/diegoadg53/5DOF_Vision_Sorting_Arm" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+              <span lang="es">Ver el código</span><span lang="en">View the code</span>
+            </a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <figure class="phone" style="margin:0">
+            <video autoplay muted loop playsinline preload="metadata" poster="assets/video/pick-2.webp" aria-label="Brazo robótico recogiendo una pieza">
+              <source src="assets/video/pick-2.mp4" type="video/mp4">
+            </video>
+            <span class="live">DEMO</span>
+            <figcaption>
+              <span lang="es">Recogida sobre la banda en movimiento.</span>
+              <span lang="en">Picking from the moving conveyor.</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="case-layout">
+        <aside class="toc" aria-label="Índice">
+          <ol>
+            <li><a href="#reto"><span lang="es">El reto</span><span lang="en">The challenge</span></a></li>
+            <li><a href="#arquitectura"><span lang="es">Arquitectura</span><span lang="en">Architecture</span></a></li>
+            <li><a href="#mecanica"><span lang="es">Diseño mecánico</span><span lang="en">Mechanical design</span></a></li>
+            <li><a href="#cinematica"><span lang="es">Cinemática</span><span lang="en">Kinematics</span></a></li>
+            <li><a href="#control"><span lang="es">Control</span><span lang="en">Control</span></a></li>
+            <li><a href="#vision"><span lang="es">Visión artificial</span><span lang="en">Computer vision</span></a></li>
+            <li><a href="#validacion"><span lang="es">Validación</span><span lang="en">Validation</span></a></li>
+            <li><a href="#aprendizajes"><span lang="es">Aprendizajes</span><span lang="en">Lessons learned</span></a></li>
+          </ol>
+        </aside>
+
+        <article class="prose">
+          <!-- TL;DR -->
+          <div class="card tldr reveal">
+            <span class="kicker"><span lang="es">En resumen</span><span lang="en">TL;DR</span></span>
+            <p lang="es">Tres microcontroladores reparten el trabajo: uno planifica, otro controla los motores en tiempo real y otro hace de puente inalámbrico. La cinemática y el control están escritos desde cero en C/C++, y un modelo YOLO11n-seg entrenado por mí corre dentro de la cámara.</p>
+            <p lang="en">Three microcontrollers split the work: one plans, one runs the motors in real time and one acts as a wireless bridge. Kinematics and control are written from scratch in C/C++, and a YOLO11n-seg model I trained runs inside the camera.</p>
+            <div class="metrics m4">
+              <div class="metric"><b>0.905</b><span lang="es">mAP50 de máscaras (prueba)</span><span lang="en">mask mAP50 (test set)</span></div>
+              <div class="metric"><b>≤ 0.35°</b><span lang="es">error articular final en 22 ciclos</span><span lang="en">final joint error over 22 cycles</span></div>
+              <div class="metric"><b>0.02°</b><span lang="es">desviación estándar en HOME</span><span lang="en">std. dev. at HOME</span></div>
+              <div class="metric"><b>100 Hz</b><span lang="es">lazo de control (10 ms en el 99.4 %)</span><span lang="en">control loop (10 ms in 99.4%)</span></div>
+            </div>
+          </div>
+
+          <!-- 1. Reto -->
+          <section id="reto" class="reveal">
+            <h2><span class="n">01</span><span lang="es">El reto</span><span lang="en">The challenge</span></h2>
+            <p lang="es">El Laboratorio de Diseño de Procesos de la UVG tiene una línea de empaque con una banda transportadora y ocho tipos de piezas de plástico. El objetivo era una plataforma didáctica de robótica, control embebido y visión: un brazo que <strong>reconozca las piezas sobre la banda en movimiento, recoja las tres piezas objetivo y las deposite en contenedores distintos</strong>.</p>
+            <p lang="en">UVG's Process Design Lab has a packaging line with a conveyor belt and eight kinds of plastic parts. The goal was a teaching platform for robotics, embedded control and vision: an arm that <strong>recognizes parts on the moving belt, picks the three target parts and drops them into separate bins</strong>.</p>
+            <p lang="es">Las restricciones lo hacían interesante: servos HiWonder de bus serie definidos desde el inicio, perfiles de aluminio 2020, una cámara HuskyLens 2 con poca capacidad de cómputo y un brazo de solo 5 grados de libertad, que no puede alcanzar cualquier orientación.</p>
+            <p lang="en">The constraints made it interesting: HiWonder serial-bus servos fixed from the start, 2020 aluminum extrusions, a HuskyLens 2 camera with limited compute, and an arm with only 5 degrees of freedom, which cannot reach every orientation.</p>
+            <figure class="fig">
+              <button class="frame" data-zoom type="button"><img src="assets/img/arm/arm-final.webp" alt="Brazo final instalado junto a la línea de empaque" loading="lazy" width="1170" height="809"></button>
+              <figcaption><span lang="es">El brazo final junto a la línea de empaque, con la fuente, el hombro diferencial, los contenedores y la cámara en su soporte.</span><span lang="en">The final arm next to the packaging line, with the power supply, differential shoulder, bins and the camera on its mount.</span></figcaption>
+            </figure>
+          </section>
+
+          <!-- 2. Arquitectura -->
+          <section id="arquitectura" class="reveal">
+            <h2><span class="n">02</span><span lang="es">Arquitectura</span><span lang="en">Architecture</span></h2>
+            <p lang="es">Separé el sistema en tres microcontroladores para que cada uno hiciera una sola cosa bien. La decisión clave fue sacar el control de motores de la Portenta H7: su sistema operativo y la red WiFi introducían variabilidad que el lazo de control no toleraba.</p>
+            <p lang="en">I split the system across three microcontrollers so each one does a single job well. The key decision was moving motor control off the Portenta H7: its operating system and WiFi stack introduced jitter the control loop couldn't tolerate.</p>
+            <div class="mcus">
+              <div class="card mcu c1">
+                <h4>Portenta H7</h4><span class="role"><span lang="es">el cerebro · Mbed OS</span><span lang="en">the brain · Mbed OS</span></span>
+                <ul lang="es"><li>Máquina de estados y menús</li><li>Cinemática directa e inversa</li><li>Homografía y seguimiento de piezas</li><li>Planificación de cada recogida</li><li>Punto de acceso WiFi</li></ul>
+                <ul lang="en"><li>State machine and menus</li><li>Forward and inverse kinematics</li><li>Homography and part tracking</li><li>Planning of every pick</li><li>WiFi access point</li></ul>
+              </div>
+              <div class="card mcu c2">
+                <h4>Nucleo-F446RE</h4><span class="role"><span lang="es">el músculo · bare metal 84 MHz</span><span lang="en">the muscle · bare metal 84 MHz</span></span>
+                <ul lang="es"><li>Lazo articular a 100 Hz</li><li>PD + compensación de gravedad y fricción</li><li>5 sensores TLE5012B con CRC</li><li>4 buses UART, uno por servo</li><li>Paro de emergencia prioritario</li></ul>
+                <ul lang="en"><li>100 Hz joint loop</li><li>PD + gravity and friction feedforward</li><li>5 TLE5012B sensors with CRC</li><li>4 UART buses, one per servo</li><li>Priority emergency stop</li></ul>
+              </div>
+              <div class="card mcu c3">
+                <h4>ESP32</h4><span class="role"><span lang="es">el puente · FreeRTOS</span><span lang="en">the bridge · FreeRTOS</span></span>
+                <ul lang="es"><li>Lee el control de PS3 por Bluetooth</li><li>Lee la cámara por UART</li><li>Envía ambos por dos puertos UDP</li><li>Un núcleo para cada tarea</li></ul>
+                <ul lang="en"><li>Reads the PS3 controller over Bluetooth</li><li>Reads the camera over UART</li><li>Sends both over two UDP ports</li><li>One core per task</li></ul>
+              </div>
+            </div>
+            <figure class="fig">
+              <button class="frame pad" data-zoom type="button"><img src="assets/img/arm/architecture.webp" alt="Diagrama de arquitectura y comunicación entre la Portenta H7, la Nucleo-F446RE y el ESP32" loading="lazy" width="1349" height="1118"></button>
+              <figcaption><span lang="es">Arquitectura completa: protocolos, puertos y mensajes entre los tres microcontroladores. Toca la imagen para ampliarla.</span><span lang="en">Full architecture: protocols, ports and messages between the three microcontrollers. Tap the image to enlarge it.</span></figcaption>
+            </figure>
+          </section>
+
+          <!-- 3. Mecánica -->
+          <section id="mecanica" class="reveal">
+            <h2><span class="n">03</span><span lang="es">Diseño mecánico</span><span lang="en">Mechanical design</span></h2>
+            <p lang="es">Modelé todo en Autodesk Inventor y fabriqué las piezas con impresión 3D, perfiles de aluminio cortados y ejes de acero 1018 maquinados en torno y fresa. La estructura llegó a su forma final después de tres rediseños, cada uno provocado por una falla real:</p>
+            <p lang="en">I modeled everything in Autodesk Inventor and built it with 3D-printed parts, cut aluminum extrusions and 1018 steel shafts machined on a lathe and a mill. The structure reached its final form after three redesigns, each one driven by a real failure:</p>
+            <div class="steps">
+              <div class="card step">
+                <img src="assets/img/arm/design-v1.webp" alt="Primer diseño" loading="lazy" data-zoom>
+                <b>v1</b>
+                <p lang="es">Doble perfil por eslabón. Los ejes de PLA fallaron por torsión, así que los cambié por <strong>ejes de acero 1018 maquinados</strong>.</p>
+                <p lang="en">Double extrusion per link. The PLA shafts failed in torsion, so I replaced them with <strong>machined 1018 steel shafts</strong>.</p>
+              </div>
+              <div class="card step">
+                <img src="assets/img/arm/design-v2.webp" alt="Segundo diseño" loading="lazy" data-zoom>
+                <b>v2</b>
+                <p lang="es">Aligeré la estructura a un perfil por eslabón, pero el motor del hombro seguía trabajando al límite, caliente y con ruido.</p>
+                <p lang="en">Lightened to one extrusion per link, but the shoulder motor was still running at its limit, hot and noisy.</p>
+              </div>
+              <div class="card step">
+                <img src="assets/img/arm/design-v3.webp" alt="Tercer diseño con hombro diferencial" loading="lazy" data-zoom>
+                <b>v3</b>
+                <p lang="es">Un <strong>hombro diferencial de engranajes cónicos</strong> reparte la carga entre dos motores. Eso me permitió volver a alargar el brazo.</p>
+                <p lang="en">A <strong>bevel-gear differential shoulder</strong> shares the load between two motors, which let me make the arm longer again.</p>
+              </div>
+            </div>
+            <div class="fig-group">
+              <div class="fig-row c2">
+                <figure class="fig"><button class="frame" data-zoom type="button"><img src="assets/img/arm/differential-shoulder.webp" alt="Hombro diferencial construido" loading="lazy"></button>
+                  <figcaption><span lang="es">Hombro diferencial construido, con reducción por poleas 4:1 y sensores magnéticos.</span><span lang="en">The built differential shoulder, with 4:1 pulley reduction and magnetic sensors.</span></figcaption></figure>
+                <figure class="fig"><button class="frame" data-zoom type="button"><img src="assets/img/arm/gripper-fingers.webp" alt="Diseño final de los dedos de la pinza" loading="lazy"></button>
+                  <figcaption><span lang="es">Los dedos de la pinza, después de 11 versiones: PLA con zonas flexibles y una "pala" que se desliza bajo la pieza.</span><span lang="en">The gripper fingers after 11 iterations: PLA with flexible zones and a "shovel" tip that slides under the part.</span></figcaption></figure>
+              </div>
+            </div>
+            <div class="callout" lang="es"><b>Compromiso de diseño.</b> El diferencial resolvió la sobrecarga, pero acopló el giro y la elevación del hombro. En vez de complicar la cinemática, la Nucleo traduce los objetivos de cabeceo y rotación a los ángulos de cada engranaje, así el resto del sistema nunca ve el acoplamiento.</div>
+            <div class="callout" lang="en"><b>Design trade-off.</b> The differential fixed the overload but coupled the shoulder's pitch and rotation. Instead of complicating the kinematics, the Nucleo maps pitch and rotation targets into each gear's angle, so the rest of the system never sees the coupling.</div>
+          </section>
+
+          <!-- 4. Cinemática -->
+          <section id="cinematica" class="reveal">
+            <h2><span class="n">04</span><span lang="es">Cinemática</span><span lang="en">Kinematics</span></h2>
+            <p lang="es">Escribí la cinemática desde cero en C++, sin ROS ni librerías externas, para que corriera dentro de la Portenta H7:</p>
+            <p lang="en">I wrote the kinematics from scratch in C++, without ROS or external libraries, so it could run on the Portenta H7:</p>
+            <ul lang="es">
+              <li><strong>Parámetros Denavit-Hartenberg</strong> tomados directamente del ensamble en Inventor.</li>
+              <li><strong>Jacobiano geométrico analítico</strong> y cinemática inversa por <strong>Damped Least Squares</strong>, que se mantiene estable cerca de singularidades y rechaza de forma segura los objetivos fuera de alcance.</li>
+              <li><strong>Espacio nulo del Jacobiano</strong> para manejar el "eje ciego": con 5 GDL hay una rotación de la herramienta que el brazo no puede controlar, y la resolví sin pedirle imposibles al solver.</li>
+              <li>Tolerancia de cálculo de 0.5 mm y 0.035 rad en las poses de recogida y depósito.</li>
+            </ul>
+            <ul lang="en">
+              <li><strong>Denavit-Hartenberg parameters</strong> taken straight from the Inventor assembly.</li>
+              <li><strong>Analytic geometric Jacobian</strong> and inverse kinematics via <strong>Damped Least Squares</strong>, which stays stable near singularities and safely rejects unreachable targets.</li>
+              <li><strong>Jacobian null space</strong> to handle the "blind axis": with 5 DOF there is one tool rotation the arm can't control, and I handled it without asking the solver for the impossible.</li>
+              <li>0.5 mm and 0.035 rad solver tolerance for pick and place poses.</li>
+            </ul>
+            <div class="fig-row c2">
+              <figure class="fig"><button class="frame pad" data-zoom type="button"><img src="assets/img/arm/ik-convergence.webp" alt="Convergencia del error de posición de la cinemática inversa" loading="lazy"></button>
+                <figcaption><span lang="es">Convergencia del error de posición de tres métodos de cinemática inversa.</span><span lang="en">Position error convergence for three inverse kinematics methods.</span></figcaption></figure>
+              <figure class="fig"><button class="frame pad" data-zoom type="button"><img src="assets/img/arm/blind-axis.webp" alt="Eje ciego de rotación del brazo de 5 GDL" loading="lazy"></button>
+                <figcaption><span lang="es">El eje ciego (rojo) en dos configuraciones del brazo.</span><span lang="en">The blind axis (red) in two arm configurations.</span></figcaption></figure>
+            </div>
+          </section>
+
+          <!-- 5. Control -->
+          <section id="control" class="reveal">
+            <h2><span class="n">05</span><span lang="es">Control</span><span lang="en">Control</span></h2>
+            <p lang="es">Los servos HiWonder de las tres articulaciones principales no tenían la precisión necesaria con su control interno, así que los operé en modo motor y cerré el lazo yo mismo con <strong>sensores magnéticos TLE5012B</strong> en cada eje.</p>
+            <p lang="en">The HiWonder servos on the three main joints weren't precise enough with their built-in control, so I ran them in motor mode and closed the loop myself with <strong>TLE5012B magnetic sensors</strong> on each axis.</p>
+            <ul lang="es">
+              <li>Controlador <strong>PD con compensación de gravedad y de fricción</strong> en la Nucleo-F446RE, a 100 Hz.</li>
+              <li>Periodo de exactamente 10 ms en el <strong>99.4 %</strong> de las muestras, gracias a un bus independiente por servo y por sensor.</li>
+              <li>Limitador de pendiente, validación de sensores con CRC y paro de emergencia con prioridad.</li>
+              <li>Asistente de calibración con referencias físicas (niveles de burbuja) guardado en Flash.</li>
+            </ul>
+            <ul lang="en">
+              <li><strong>PD controller with gravity and friction feedforward</strong> on the Nucleo-F446RE at 100 Hz.</li>
+              <li>Exactly 10 ms period in <strong>99.4%</strong> of samples, thanks to a dedicated bus per servo and per sensor.</li>
+              <li>Slew-rate limiter, CRC-checked sensor reads and a priority emergency stop.</li>
+              <li>Calibration wizard with physical references (bubble levels), stored in Flash.</li>
+            </ul>
+            <figure class="fig">
+              <button class="frame pad" data-zoom type="button"><img src="assets/img/arm/control-loop.webp" alt="Diagrama de bloques del lazo de control" loading="lazy"></button>
+              <figcaption><span lang="es">Lazo de control de posición de los tres primeros grados de libertad.</span><span lang="en">Position control loop for the first three degrees of freedom.</span></figcaption>
+            </figure>
+            <figure class="fig">
+              <button class="frame pad" data-zoom type="button"><img src="assets/img/arm/repeatability.webp" alt="Ángulo medio en HOME a lo largo de 22 ciclos" loading="lazy"></button>
+              <figcaption><span lang="es">Posición en HOME al final de cada ciclo: sin deriva en 22 ciclos y dentro de la banda muerta de ±0.4°.</span><span lang="en">HOME position at the end of each cycle: no drift across 22 cycles and inside the ±0.4° dead band.</span></figcaption>
+            </figure>
+            <div class="callout" lang="es"><b>Lo que no sale en los libros.</b> La posición de HOME se movía entre arranques. La causa no estaba en el código: el imán del sensor estaba demasiado cerca del eje de acero. Separarlo 1 mm eliminó la deriva. La instalación del sensor resultó tan importante como el algoritmo.</div>
+            <div class="callout" lang="en"><b>What the textbooks don't tell you.</b> The HOME position drifted between power-ups. The cause wasn't in the code: the sensor magnet sat too close to the steel shaft. Moving it 1 mm away removed the drift. Sensor installation mattered as much as the algorithm.</div>
+          </section>
+
+          <!-- 6. Visión -->
+          <section id="vision" class="reveal">
+            <h2><span class="n">06</span><span lang="es">Visión artificial</span><span lang="en">Computer vision</span></h2>
+            <p lang="es">Armé y etiqueté mi propio conjunto de datos con las ocho piezas de la línea y entrené un modelo <strong>YOLO11n-seg</strong> en Python. El modelo corre dentro de la cámara HuskyLens 2, y sus detecciones pasan a coordenadas de la banda con una <strong>homografía con error de reproyección de hasta 1 mm</strong>.</p>
+            <p lang="en">I built and labeled my own dataset with the line's eight parts and trained a <strong>YOLO11n-seg</strong> model in Python. The model runs inside the HuskyLens 2 camera, and its detections are mapped to belt coordinates with a <strong>homography with up to 1 mm reprojection error</strong>.</p>
+            <figure class="fig">
+              <button class="frame" data-zoom type="button"><img src="assets/img/arm/parts.webp" alt="Piezas de trabajo de la línea de empaque" loading="lazy"></button>
+              <figcaption><span lang="es">Algunas de las piezas de la línea. Varias son casi iguales o reflejos una de otra.</span><span lang="en">Some of the line's parts. Several are nearly identical or mirror images of each other.</span></figcaption>
+            </figure>
+            <div class="fig-row c2">
+              <figure class="fig"><button class="frame pad" data-zoom type="button"><img src="assets/img/arm/training-curves.webp" alt="Curvas de entrenamiento del modelo" loading="lazy"></button>
+                <figcaption><span lang="es">Pérdidas y métricas de validación durante el entrenamiento.</span><span lang="en">Losses and validation metrics during training.</span></figcaption></figure>
+              <figure class="fig"><button class="frame pad" data-zoom type="button"><img src="assets/img/arm/confusion-matrix.webp" alt="Matriz de confusión del modelo" loading="lazy"></button>
+                <figcaption><span lang="es">Matriz de confusión en el conjunto de prueba.</span><span lang="en">Confusion matrix on the test set.</span></figcaption></figure>
+            </div>
+            <figure class="fig">
+              <button class="frame" data-zoom type="button"><img src="assets/img/arm/huskylens.webp" alt="Detecciones en la pantalla de la HuskyLens 2" loading="lazy"></button>
+              <figcaption><span lang="es">Detecciones en tiempo real en la pantalla de la HuskyLens 2, sobre la banda.</span><span lang="en">Real-time detections on the HuskyLens 2 screen, over the belt.</span></figcaption>
+            </figure>
+            <div class="callout" lang="es"><b>Dos decisiones que importaron más que la arquitectura del modelo.</b> Entrenar con las ocho piezas, y no solo con las tres objetivo, evitó que las piezas desconocidas se confundieran con piezas objetivo. Además, dividir los datos por bloques de tiempo destapó confusiones que una división aleatoria escondía detrás de un mAP50 de 0.995.</div>
+            <div class="callout" lang="en"><b>Two decisions that mattered more than the model architecture.</b> Training on all eight parts, not just the three targets, kept unknown parts from being mistaken for targets. And splitting the data by time blocks exposed confusions that a random split hid behind a 0.995 mAP50.</div>
+          </section>
+
+          <!-- 7. Validación -->
+          <section id="validacion" class="reveal">
+            <h2><span class="n">07</span><span lang="es">Validación</span><span lang="en">Validation</span></h2>
+            <p lang="es">Probé el sistema completo con <strong>120 piezas presentadas a 119.56 mm/s</strong>, la velocidad de banda más alta compatible con el tiempo de recogida del brazo.</p>
+            <p lang="en">I tested the full system with <strong>120 parts presented at 119.56 mm/s</strong>, the fastest belt speed compatible with the arm's pick timing.</p>
+            <figure class="fig">
+              <button class="frame" data-zoom type="button"><img src="assets/img/arm/pick-cycle.webp" alt="Ciclo de recogida y clasificación" loading="lazy"></button>
+              <figcaption><span lang="es">Un ciclo completo: aproximación, sujeción, traslado y depósito.</span><span lang="en">A full cycle: approach, grasp, transfer and drop.</span></figcaption>
+            </figure>
+            <div class="bars">
+              <div class="bar"><span lang="es">Manipulación completada</span><span lang="en">Handling completed</span><b>52.5 %</b><div class="track"><div class="fill" style="width:52.5%"></div></div></div>
+              <div class="bar"><span lang="es">Depositada en el contenedor correcto</span><span lang="en">Dropped in the correct bin</span><b>43.3 %</b><div class="track"><div class="fill" style="width:43.3%"></div></div></div>
+              <div class="bar"><span lang="es">Pérdidas por agarre fallido</span><span lang="en">Losses from failed grasps</span><b>34.2 pp</b><div class="track"><div class="fill warn" style="width:34.2%"></div></div></div>
+              <div class="bar"><span lang="es">Pérdidas por caídas en el traslado</span><span lang="en">Losses from drops in transfer</span><b>10.0 pp</b><div class="track"><div class="fill mid" style="width:10%"></div></div></div>
+              <div class="bar"><span lang="es">Pérdidas por errores de reconocimiento</span><span lang="en">Losses from recognition errors</span><b>9.2 pp</b><div class="track"><div class="fill bad" style="width:9.2%"></div></div></div>
+            </div>
+            <p lang="es">El prototipo funciona de forma integrada, pero todavía no tiene la tasa de éxito de una aplicación productiva, y el análisis de pérdidas dice exactamente por qué: <strong>el cuello de botella es el agarre</strong>, que era temporizado y sin sensor, no la visión ni el control. Los errores de clasificación se concentraron en un solo par de piezas especulares.</p>
+            <p lang="en">The prototype works as an integrated system but doesn't yet have a production-level success rate, and the loss analysis shows exactly why: <strong>the bottleneck is the grasp</strong>, which was timed and unsensed, not vision or control. Classification errors were concentrated in a single pair of mirror-image parts.</p>
+            <figure class="fig">
+              <button class="frame pad" data-zoom type="button"><img src="assets/img/arm/validation-results.webp" alt="Resultados por pieza en las corridas de validación" loading="lazy"></button>
+              <figcaption><span lang="es">Resultado de cada presentación por pieza en las tres corridas de validación.</span><span lang="en">Outcome of every presentation per part across the three validation runs.</span></figcaption>
+            </figure>
+          </section>
+
+          <!-- 8. Aprendizajes -->
+          <section id="aprendizajes" class="reveal">
+            <h2><span class="n">08</span><span lang="es">Aprendizajes y siguientes pasos</span><span lang="en">Lessons and next steps</span></h2>
+            <h3 lang="es">Lo que aprendí</h3><h3 lang="en">What I learned</h3>
+            <ul lang="es">
+              <li>Repartir tareas entre microcontroladores según sus tiempos (planificación frente a control en tiempo real) resolvió problemas que ningún ajuste de ganancias iba a resolver.</li>
+              <li>Medir cada etapa de la pérdida convierte un "funciona a veces" en una lista priorizada de mejoras.</li>
+              <li>Iterar barato (dedos intercambiables, mismo mecanismo) permitió once versiones de la pinza sin rehacer el actuador.</li>
+            </ul>
+            <ul lang="en">
+              <li>Splitting work across microcontrollers by timing needs (planning vs. real-time control) solved problems no amount of gain tuning would have.</li>
+              <li>Measuring every stage of loss turns "it works sometimes" into a prioritized list of improvements.</li>
+              <li>Cheap iteration (swappable fingers, same mechanism) allowed eleven gripper versions without rebuilding the actuator.</li>
+            </ul>
+            <h3 lang="es">Qué haría en la siguiente versión</h3><h3 lang="en">What I'd do in the next version</h3>
+            <ul lang="es">
+              <li>Sensar la sujeción para confirmar cada agarre antes de trasladar la pieza.</li>
+              <li>Usar actuadores con control de posición propio.</li>
+              <li>Reentrenar el modelo con clases balanceadas, enfocado en las piezas especulares.</li>
+              <li>Agregar un paro de emergencia por hardware y hacer más robustas las comunicaciones inalámbricas.</li>
+            </ul>
+            <ul lang="en">
+              <li>Sense the grasp to confirm each pick before transferring the part.</li>
+              <li>Use actuators with built-in closed-loop position control.</li>
+              <li>Retrain the model with balanced classes, focused on the mirror-image parts.</li>
+              <li>Add a hardware emergency stop and harden the wireless links.</li>
+            </ul>
+            <h3 lang="es">Más video</h3><h3 lang="en">More footage</h3>
+            <div class="video-pair">
+              <video controls muted playsinline preload="none" poster="assets/video/pick-1.webp"><source src="assets/video/pick-1.mp4" type="video/mp4"></video>
+              <video controls muted playsinline preload="none" poster="assets/video/demo-presentation.webp"><source src="assets/video/demo-presentation.mp4" type="video/mp4"></video>
+            </div>
+          </section>
+
+          <div class="card next-up reveal">
+            <p lang="es">¿Querés ver el firmware, el flujo de entrenamiento o la documentación técnica?</p>
+            <p lang="en">Want to see the firmware, the training pipeline or the technical docs?</p>
+            <div class="row-ctas">
+              <a class="btn btn-solid" href="https://github.com/diegoadg53/5DOF_Vision_Sorting_Arm" target="_blank" rel="noopener"><span lang="es">Repositorio en GitHub</span><span lang="en">GitHub repository</span> ↗</a>
+              <a class="btn btn-outline" href="index.html#contacto"><span lang="es">Contactarme</span><span lang="en">Get in touch</span></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span>© <span data-year>2026</span> Diego Duarte Grajeda</span>
+      <a href="index.html"><span lang="es">← Volver al inicio</span><span lang="en">← Back home</span></a>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
