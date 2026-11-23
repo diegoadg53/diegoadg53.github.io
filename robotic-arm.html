@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=4">
 </head>
 <body>
   <a class="skip" href="#main">Saltar al contenido</a>
@@ -49,7 +49,7 @@
 
   <main id="main">
     <!-- ================= HERO ================= -->
-    <section class="hero case-hero">
+    <section class="hero case-hero wide">
       <div class="container">
         <div>
           <a class="back" href="index.html">← <span lang="es">Volver al portafolio</span><span lang="en">Back to portfolio</span></a>
@@ -76,14 +76,14 @@
           </div>
         </div>
         <div class="hero-media">
-          <figure class="phone" style="margin:0">
-            <video autoplay muted loop playsinline preload="metadata" poster="assets/video/pick-2.webp" aria-label="Brazo robótico recogiendo una pieza">
-              <source src="assets/video/pick-2.mp4" type="video/mp4">
+          <figure class="phone landscape" style="margin:0">
+            <video autoplay muted loop playsinline preload="metadata" poster="assets/video/arm-pick-b.webp" aria-label="Brazo robótico recogiendo una pieza y depositándola en su contenedor">
+              <source src="assets/video/arm-pick-b.mp4" type="video/mp4">
             </video>
             <span class="live">DEMO</span>
             <figcaption>
-              <span lang="es">Recogida sobre la banda en movimiento.</span>
-              <span lang="en">Picking from the moving conveyor.</span>
+              <span lang="es">Recoge la pieza de la banda en movimiento y la lleva a su contenedor.</span>
+              <span lang="en">Picking a part from the moving conveyor and taking it to its bin.</span>
             </figcaption>
           </figure>
         </div>
@@ -326,10 +326,10 @@
               <li>Add a hardware emergency stop and harden the wireless links.</li>
             </ul>
             <h3 lang="es">Más video</h3><h3 lang="en">More footage</h3>
-            <div class="video-pair">
-              <video controls muted playsinline preload="none" poster="assets/video/pick-1.webp"><source src="assets/video/pick-1.mp4" type="video/mp4"></video>
-              <video controls muted playsinline preload="none" poster="assets/video/demo-presentation.webp"><source src="assets/video/demo-presentation.mp4" type="video/mp4"></video>
-            </div>
+            <figure class="fig">
+              <video class="full-run" controls playsinline preload="none" poster="assets/video/arm-full-run.webp"><source src="assets/video/arm-full-run.mp4" type="video/mp4"></video>
+              <figcaption><span lang="es">Corrida completa sin cortes: el brazo recoge las tres piezas objetivo de la banda en movimiento y deposita cada una en su contenedor.</span><span lang="en">An uncut run: the arm picks all three target parts from the moving conveyor and drops each one into its bin.</span></figcaption>
+            </figure>
           </section>
 
           <div class="card next-up reveal">
@@ -352,6 +352,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=3"></script>
 </body>
 </html>
