@@ -312,6 +312,19 @@ section { scroll-margin-top: 70px; }
 .plinks a:hover, .plinks button:hover { border-color: var(--accent-ink); color: var(--accent-ink); }
 .plinks svg { width: 15px; height: 15px; }
 
+.pthumbs.two { grid-template-columns: repeat(2, 1fr); }
+.pthumbs img[src$=".svg"] { object-fit: contain; padding: 4px; }
+
+/* ---------- Créditos de Autodesk ---------- */
+.gmedia { position: relative; }
+.credit {
+  position: absolute; right: 6px; bottom: 6px; max-width: calc(100% - 12px);
+  background: rgba(255, 255, 255, .88); color: #33415a; font: 500 10.5px/1.3 var(--font);
+  padding: 3px 7px; border-radius: 5px; pointer-events: none;
+}
+.credit-line { font-size: 12.5px !important; color: var(--muted) !important; margin: 10px 0 0; }
+footer .foot-credit { flex-basis: 100%; order: 3; font-size: 12.5px; }
+
 /* ---------- Más proyectos (cuadrícula con filtros) ---------- */
 .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
 .filters button {

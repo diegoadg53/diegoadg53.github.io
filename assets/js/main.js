@@ -10,6 +10,17 @@
     root.setAttribute('lang', lang);
     document.querySelectorAll('.lang-toggle button').forEach(b =>
       b.setAttribute('aria-pressed', String(b.dataset.setLang === lang)));
+    document.querySelectorAll('a[data-cv]').forEach(a => {
+      a.href = 'assets/docs/CV_DiegoDuarte_' + (lang === 'en' ? 'EN' : 'ES') + '.pdf';
+    });
+    // Textos alternativos, etiquetas e imágenes con versión en inglés
+    const swap = (sel, attr, data) => document.querySelectorAll(sel).forEach(el => {
+      if (!el.dataset[data + 'Es']) el.dataset[data + 'Es'] = el.getAttribute(attr) || '';
+      el.setAttribute(attr, lang === 'en' ? el.dataset[data + 'En'] : el.dataset[data + 'Es']);
+    });
+    swap('[data-alt-en]', 'alt', 'alt');
+    swap('[data-label-en]', 'aria-label', 'label');
+    swap('img[data-src-en]', 'src', 'src');
     const t = document.querySelector('meta[name="title-' + lang + '"]');
     if (t) document.title = t.content;
   }
@@ -39,7 +50,13 @@
     dFull.href = img.getAttribute('src');
     const fig = img.closest('figure');
     const cap = fig && fig.querySelector('figcaption');
-    dCap.textContent = cap ? cap.innerText.trim() : img.alt;
+    let text = cap ? cap.innerText.trim() : img.alt;
+    if (img.hasAttribute('data-credit') && !/Autodesk/.test(text)) {
+      text += root.getAttribute('data-lang') === 'en'
+        ? ' · Autodesk Inventor screenshot, courtesy of Autodesk, Inc.'
+        : ' · Captura de Autodesk Inventor, cortesía de Autodesk, Inc.';
+    }
+    dCap.textContent = text;
     dlg.showModal();
   });
 

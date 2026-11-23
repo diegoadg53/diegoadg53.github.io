@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="640" viewBox="0 0 1240 640" font-family="Inter, Segoe UI, Arial, sans-serif">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5d6a80"/></marker></defs>
+<rect width="1240" height="640" fill="#f6f8fb"/>
+<text x="40" y="48" font-size="24" font-weight="800" fill="#0c1a2f">Máquina clasificadora con robot delta: arquitectura de control</text>
+<text x="40" y="74" font-size="14" fill="#5d6a80">PLC Siemens S7-300 (CPU 315-2 PN/DP) en STL  ·  Arduino con cinemática inversa del delta</text>
+<text x="40" y="112" font-size="12" font-weight="700" letter-spacing="1.5" fill="#0f9d76">ENTRADAS</text>
+<text x="390" y="112" font-size="12" font-weight="700" letter-spacing="1.5" fill="#1f4e79">PLC SIEMENS S7-300</text>
+<text x="900" y="112" font-size="12" font-weight="700" letter-spacing="1.5" fill="#e07b24">ACTUADORES</text>
+<rect x="40" y="126" width="300" height="52" rx="9" fill="#ffffff" stroke="#d5dde8"/><rect x="40" y="126" width="5" height="52" rx="2" fill="#0f9d76"/><text x="56" y="148" font-size="14.5" font-weight="700" fill="#0f1a2b">Botón RUN y paro de emergencia</text><text x="56" y="167" font-size="12.5" fill="#5d6a80">entradas digitales</text>
+<rect x="40" y="188" width="300" height="52" rx="9" fill="#ffffff" stroke="#d5dde8"/><rect x="40" y="188" width="5" height="52" rx="2" fill="#0f9d76"/><text x="56" y="210" font-size="14.5" font-weight="700" fill="#0f1a2b">Selector manual / automático</text><text x="56" y="229" font-size="12.5" fill="#5d6a80">entradas digitales</text>
+<rect x="40" y="250" width="300" height="52" rx="9" fill="#ffffff" stroke="#d5dde8"/><rect x="40" y="250" width="5" height="52" rx="2" fill="#0f9d76"/><text x="56" y="272" font-size="14.5" font-weight="700" fill="#0f1a2b">Sensor de presencia</text><text x="56" y="291" font-size="12.5" fill="#5d6a80">inicia la medición en modo auto</text>
+<rect x="40" y="312" width="300" height="52" rx="9" fill="#ffffff" stroke="#d5dde8"/><rect x="40" y="312" width="5" height="52" rx="2" fill="#0f9d76"/><text x="56" y="334" font-size="14.5" font-weight="700" fill="#0f1a2b">Sensor ultrasónico</text><text x="56" y="353" font-size="12.5" fill="#5d6a80">tamaño de la caja · analógica 5–30 cm</text>
+<rect x="40" y="374" width="300" height="52" rx="9" fill="#ffffff" stroke="#d5dde8"/><rect x="40" y="374" width="5" height="52" rx="2" fill="#0f9d76"/><text x="56" y="396" font-size="14.5" font-weight="700" fill="#0f1a2b">Sensor de temperatura</text><text x="56" y="415" font-size="12.5" fill="#5d6a80">analógica</text>
+<rect x="40" y="436" width="300" height="52" rx="9" fill="#ffffff" stroke="#d5dde8"/><rect x="40" y="436" width="5" height="52" rx="2" fill="#0f9d76"/><text x="56" y="458" font-size="14.5" font-weight="700" fill="#0f1a2b">HMI</text><text x="56" y="477" font-size="12.5" fill="#5d6a80">límites de temperatura y tamaño</text>
+<rect x="390" y="126" width="420" height="488" rx="12" fill="#eef3fa" stroke="#d5dde8"/>
+<rect x="406" y="142" width="388" height="52" rx="9" fill="#ffffff" stroke="#d5dde8"/><rect x="406" y="142" width="5" height="52" rx="2" fill="#1f4e79"/><text x="422" y="164" font-size="14.5" font-weight="700" fill="#0f1a2b">OB1 · ciclo principal</text><text x="422" y="183" font-size="12.5" fill="#5d6a80">modos, arranque con retardo de 3 s, banda</text>
+<rect x="406" y="204" width="388" height="52" rx="9" fill="#ffffff" stroke="#d5dde8"/><rect x="406" y="204" width="5" height="52" rx="2" fill="#1f4e79"/><text x="422" y="226" font-size="14.5" font-weight="700" fill="#0f1a2b">FB2 · medirCaja</text><text x="422" y="245" font-size="12.5" fill="#5d6a80">escala las lecturas y las compara con los límites</text>
+<rect x="406" y="266" width="388" height="52" rx="9" fill="#ffffff" stroke="#d5dde8"/><rect x="406" y="266" width="5" height="52" rx="2" fill="#1f4e79"/><text x="422" y="288" font-size="14.5" font-weight="700" fill="#0f1a2b">FB3 · MandarPosicion</text><text x="422" y="307" font-size="12.5" fill="#5d6a80">clasifica la caja y la codifica en voltaje</text>
+<rect x="406" y="328" width="388" height="52" rx="9" fill="#ffffff" stroke="#d5dde8"/><rect x="406" y="328" width="5" height="52" rx="2" fill="#1f4e79"/><text x="422" y="350" font-size="14.5" font-weight="700" fill="#0f1a2b">Contadores por categoría</text><text x="422" y="369" font-size="12.5" fill="#5d6a80">se muestran en la HMI</text>
+<text x="406" y="410" font-size="12.5" font-weight="700" fill="#1f4e79">Código de clasificación (salida analógica 0–5 V)</text>
+<rect x="406" y="422" width="388" height="26" rx="6" fill="#ffffff" stroke="#d5dde8"/>
+<text x="418" y="440" font-size="12.5" fill="#0f1a2b">Solo tamaño</text>
+<text x="606" y="440" font-size="12.5" font-weight="700" font-family="Consolas, monospace" fill="#1f4e79">1.5 V</text>
+<text x="782" y="440" font-size="12.5" text-anchor="end" fill="#5d6a80">→ Contenedor 1</text>
+<rect x="406" y="452" width="388" height="26" rx="6" fill="#ffffff" stroke="#d5dde8"/>
+<text x="418" y="470" font-size="12.5" fill="#0f1a2b">Solo temperatura</text>
+<text x="606" y="470" font-size="12.5" font-weight="700" font-family="Consolas, monospace" fill="#1f4e79">2.5 V</text>
+<text x="782" y="470" font-size="12.5" text-anchor="end" fill="#5d6a80">→ Contenedor 2</text>
+<rect x="406" y="482" width="388" height="26" rx="6" fill="#ffffff" stroke="#d5dde8"/>
+<text x="418" y="500" font-size="12.5" fill="#0f1a2b">Ambas condiciones</text>
+<text x="606" y="500" font-size="12.5" font-weight="700" font-family="Consolas, monospace" fill="#1f4e79">3.5 V</text>
+<text x="782" y="500" font-size="12.5" text-anchor="end" fill="#5d6a80">→ Contenedor 3</text>
+<rect x="406" y="512" width="388" height="26" rx="6" fill="#ffffff" stroke="#d5dde8"/>
+<text x="418" y="530" font-size="12.5" fill="#0f1a2b">Ninguna</text>
+<text x="606" y="530" font-size="12.5" font-weight="700" font-family="Consolas, monospace" fill="#1f4e79">4.5 V</text>
+<text x="782" y="530" font-size="12.5" text-anchor="end" fill="#5d6a80">→ Rechazo</text>
+<path d="M346 310 L384 310" stroke="#5d6a80" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<path d="M343 128 L343 488" stroke="#d5dde8" stroke-width="2" fill="none"/>
+<rect x="900" y="126" width="300" height="52" rx="9" fill="#ffffff" stroke="#d5dde8"/><rect x="900" y="126" width="5" height="52" rx="2" fill="#e07b24"/><text x="916" y="148" font-size="14.5" font-weight="700" fill="#0f1a2b">Motor DC de la banda</text><text x="916" y="167" font-size="12.5" fill="#5d6a80">salida digital</text>
+<rect x="900" y="188" width="300" height="52" rx="9" fill="#ffffff" stroke="#d5dde8"/><rect x="900" y="188" width="5" height="52" rx="2" fill="#e07b24"/><text x="916" y="210" font-size="14.5" font-weight="700" fill="#0f1a2b">Servo de rechazo + lámpara</text><text x="916" y="229" font-size="12.5" fill="#5d6a80">saca las cajas que no cumplen</text>
+<rect x="900" y="300" width="300" height="200" rx="12" fill="#ffffff" stroke="#7c4dcc" stroke-width="1.5"/>
+<rect x="900" y="300" width="300" height="34" rx="12" fill="#7c4dcc"/><rect x="900" y="320" width="300" height="14" fill="#7c4dcc"/>
+<text x="916" y="323" font-size="14.5" font-weight="700" fill="#fff">Arduino · robot delta</text>
+<text x="916" y="358" font-size="13" fill="#0f1a2b">lee el voltaje, resuelve la cinemática</text>
+<text x="916" y="377" font-size="13" fill="#0f1a2b">inversa de 3 brazos y lleva la caja con</text>
+<text x="916" y="396" font-size="13" fill="#0f1a2b">la pinza a uno de 3 contenedores a 120°</text>
+<rect x="912" y="540" width="82" height="52" rx="8" fill="#fff" stroke="#7c4dcc" stroke-dasharray="4 3"/>
+<text x="953" y="572" font-size="15" font-weight="700" text-anchor="middle" fill="#7c4dcc">1</text>
+<rect x="1010" y="540" width="82" height="52" rx="8" fill="#fff" stroke="#7c4dcc" stroke-dasharray="4 3"/>
+<text x="1051" y="572" font-size="15" font-weight="700" text-anchor="middle" fill="#7c4dcc">2</text>
+<rect x="1108" y="540" width="82" height="52" rx="8" fill="#fff" stroke="#7c4dcc" stroke-dasharray="4 3"/>
+<text x="1149" y="572" font-size="15" font-weight="700" text-anchor="middle" fill="#7c4dcc">3</text>
+<text x="1050" y="616" font-size="12.5" text-anchor="middle" fill="#5d6a80">Contenedores 1-3</text>
+<path d="M1050 504 L1050 534" stroke="#7c4dcc" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<path d="M812 152 L894 152" stroke="#5d6a80" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<path d="M812 214 L894 214" stroke="#5d6a80" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<path d="M812 400 L894 400" stroke="#7c4dcc" stroke-width="2.5" fill="none" marker-end="url(#a)"/>
+<text x="853" y="391" font-size="12.5" font-weight="700" text-anchor="middle" font-family="Consolas, monospace" fill="#7c4dcc">0–5 V</text>
+</svg>

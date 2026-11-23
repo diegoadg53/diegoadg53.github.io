@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=4">
+  <link rel="stylesheet" href="assets/css/style.css?v=5">
 </head>
 <body>
   <a class="skip" href="#main">Saltar al contenido</a>
@@ -32,11 +32,11 @@
 
   <header class="nav">
     <div class="container">
-      <a class="brand" href="#top" aria-label="Inicio">
+      <a class="brand" href="#top" aria-label="Inicio" data-label-en="Home">
         <span class="brand-mark">DD</span>
         <span class="brand-name">Diego Duarte</span>
       </a>
-      <nav class="nav-links" aria-label="Principal">
+      <nav class="nav-links" aria-label="Principal" data-label-en="Main">
         <a href="#proyectos"><span lang="es">Proyectos</span><span lang="en">Projects</span></a>
         <a href="#experiencia"><span lang="es">Experiencia</span><span lang="en">Experience</span></a>
         <a href="#habilidades"><span lang="es">Habilidades</span><span lang="en">Skills</span></a>
@@ -47,7 +47,7 @@
           <button type="button" data-set-lang="es" aria-pressed="true">ES</button>
           <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
         </div>
-        <a class="btn btn-primary btn-sm" href="assets/docs/CV_DiegoDuarte.pdf" target="_blank" rel="noopener">CV</a>
+        <a class="btn btn-primary btn-sm" href="assets/docs/CV_DiegoDuarte_ES.pdf" data-cv target="_blank" rel="noopener">CV</a>
       </div>
     </div>
   </header>
@@ -78,7 +78,7 @@
               <span lang="es">Ver proyecto destacado</span><span lang="en">See featured project</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
-            <a class="btn btn-ghost" href="assets/docs/CV_DiegoDuarte.pdf" target="_blank" rel="noopener">
+            <a class="btn btn-ghost" href="assets/docs/CV_DiegoDuarte_ES.pdf" data-cv target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
               <span lang="es">Descargar CV</span><span lang="en">Download CV</span>
             </a>
@@ -89,7 +89,7 @@
         </div>
         <div class="hero-media">
           <figure class="phone landscape" style="margin:0">
-            <video autoplay muted loop playsinline preload="metadata" poster="assets/video/arm-pick-a.webp" aria-label="Brazo robótico recogiendo una pieza de la banda y depositándola en su contenedor">
+            <video autoplay muted loop playsinline preload="metadata" poster="assets/video/arm-pick-a.webp" aria-label="Brazo robótico recogiendo una pieza de la banda y depositándola en su contenedor" data-label-en="Robotic arm picking a part from the conveyor and dropping it into its bin">
               <source src="assets/video/arm-pick-a.mp4" type="video/mp4">
             </video>
             <span class="live">DEMO</span>
@@ -116,7 +116,7 @@
 
         <article class="card feature reveal">
           <div class="feature-media">
-            <img src="assets/img/arm/arm-final.webp" alt="Brazo robótico de 5 grados de libertad instalado junto a la línea de empaque" loading="lazy" width="1170" height="809">
+            <img src="assets/img/arm/arm-final.webp" alt="Brazo robótico de 5 grados de libertad instalado junto a la línea de empaque" data-alt-en="5-DOF robotic arm installed next to the packaging line" loading="lazy" width="1170" height="809">
             <span class="badge"><span lang="es">Tesis · UVG 2026</span><span lang="en">Thesis · UVG 2026</span></span>
           </div>
           <div class="feature-body">
@@ -161,8 +161,8 @@
           <!-- PLC -->
           <article class="card pcard reveal">
             <div class="pmedia">
-              <img src="assets/img/projects/auto-delta.webp" alt="Banda transportadora con robot delta controlado por PLC" loading="lazy">
-              <button class="play" type="button" data-video="_epjnVA-gyE" data-vertical aria-label="Ver video"><svg><use href="#i-play"/></svg><span lang="es">Ver video</span><span lang="en">Watch video</span></button>
+              <img src="assets/img/projects/auto-delta.webp" alt="Banda transportadora con robot delta controlado por PLC" data-alt-en="Conveyor with a PLC-controlled delta robot" loading="lazy">
+              <button class="play" type="button" data-video="_epjnVA-gyE" data-vertical aria-label="Ver video" data-label-en="Watch video"><svg><use href="#i-play"/></svg><span lang="es">Ver video</span><span lang="en">Watch video</span></button>
               <span class="ptag"><span lang="es">Automatización</span><span lang="en">Automation</span></span>
             </div>
             <div class="pbody">
@@ -170,11 +170,10 @@
               <h3><span lang="es">Automatización con PLC Siemens</span><span lang="en">Siemens PLC automation</span></h3>
               <p lang="es">Dos líneas de producción programadas en un PLC Siemens. La primera es una <strong>máquina clasificadora con robot delta</strong>, coordinada entre el PLC y un Arduino. La segunda es una <strong>banda de control de calidad de 12 estaciones</strong> escrita en STL: mide color, peso, tamaño y temperatura, sigue cada producto con un shift register y rechaza los defectuosos en la estación 11.</p>
               <p lang="en">Two production lines programmed on a Siemens PLC. The first is a <strong>sorting machine with a delta robot</strong>, coordinated between the PLC and an Arduino. The second is a <strong>12-station quality-control conveyor</strong> written in STL: it measures color, weight, size and temperature, tracks each product with a shift register and rejects defective ones at station 11.</p>
-              <ul class="chips"><li>PLC Siemens</li><li>STL</li><li>HMI</li><li>VFD</li><li><span lang="es">Robot delta</span><span lang="en">Delta robot</span></li></ul>
-              <div class="pthumbs">
-                <img src="assets/img/projects/auto-hmi.webp" alt="Pantalla de parámetros configurables en la HMI" loading="lazy" data-zoom>
-                <img src="assets/img/projects/auto-diagram.webp" alt="Diagrama de proceso y eléctrico de la clasificadora" loading="lazy" data-zoom>
-                <img src="assets/img/projects/auto-panel.webp" alt="Tablero con variador de frecuencia" loading="lazy" data-zoom>
+              <ul class="chips"><li>PLC Siemens</li><li>STL</li><li>HMI</li><li>Arduino</li><li><span lang="es">Robot delta</span><span lang="en">Delta robot</span></li></ul>
+              <div class="pthumbs two">
+                <img src="assets/img/projects/auto-architecture-es.svg" data-src-en="assets/img/projects/auto-architecture-en.svg" alt="Arquitectura de control de la clasificadora con robot delta" data-alt-en="Control architecture of the delta-robot sorting machine" loading="lazy" data-zoom>
+                <img src="assets/img/projects/auto-hmi.webp" alt="Pantalla de parámetros configurables en la HMI" data-alt-en="Configurable parameters screen on the HMI" loading="lazy" data-zoom>
               </div>
             </div>
           </article>
@@ -182,8 +181,8 @@
           <!-- SUMO -->
           <article class="card pcard reveal">
             <div class="pmedia">
-              <video autoplay muted loop playsinline preload="none" poster="assets/video/sumo-match.webp" aria-label="Robot sumo en competencia"><source src="assets/video/sumo-match.mp4" type="video/mp4"></video>
-              <button class="play" type="button" data-video="FS1At9vrlMY" aria-label="Ver video"><svg><use href="#i-play"/></svg><span lang="es">Ver video</span><span lang="en">Watch video</span></button>
+              <video autoplay muted loop playsinline preload="none" poster="assets/video/sumo-match.webp" aria-label="Robot sumo en competencia" data-label-en="Sumo robot in a match"><source src="assets/video/sumo-match.mp4" type="video/mp4"></video>
+              <button class="play" type="button" data-video="FS1At9vrlMY" aria-label="Ver video" data-label-en="Watch video"><svg><use href="#i-play"/></svg><span lang="es">Ver video</span><span lang="en">Watch video</span></button>
               <span class="ptag"><span lang="es">PCB · Electrónica</span><span lang="en">PCB · Electronics</span></span>
             </div>
             <div class="pbody">
@@ -193,9 +192,9 @@
               <p lang="en">A sumo robot controlled over Bluetooth from a phone. I designed the <strong>PCB in Altium</strong> (schematic, components, design-rule check and Gerbers), modeled the laser-cut MDF body in <strong>Inventor</strong> and built it for the course competition. In one revision I removed the on-board regulator to reuse the one on the H-bridge.</p>
               <ul class="chips"><li>Altium</li><li>Inventor</li><li>ESP32</li><li>L298N</li><li>Bluetooth</li></ul>
               <div class="pthumbs">
-                <img src="assets/img/projects/sumo-pcb.webp" alt="Diseño de la PCB del robot sumo en Altium" loading="lazy" data-zoom>
-                <img src="assets/img/projects/sumo-schematic.webp" alt="Esquemático del robot sumo" loading="lazy" data-zoom>
-                <img src="assets/img/projects/sumo-cad.webp" alt="Modelo de la estructura en Inventor" loading="lazy" data-zoom>
+                <img src="assets/img/projects/sumo-pcb.webp" alt="Diseño de la PCB del robot sumo en Altium" data-alt-en="Sumo robot PCB layout in Altium" loading="lazy" data-zoom>
+                <img src="assets/img/projects/sumo-schematic.webp" alt="Esquemático del robot sumo" data-alt-en="Sumo robot schematic" loading="lazy" data-zoom>
+                <img data-credit src="assets/img/projects/sumo-cad.webp" alt="Modelo de la estructura en Inventor" data-alt-en="Body model in Inventor" loading="lazy" data-zoom>
               </div>
             </div>
           </article>
@@ -203,8 +202,8 @@
           <!-- MOTOR DC -->
           <article class="card pcard reveal">
             <div class="pmedia">
-              <img src="assets/img/projects/motor-scope.webp" alt="Respuesta al escalón del controlador PID en el osciloscopio" loading="lazy">
-              <button class="play" type="button" data-video="D_7jwuB7akw" aria-label="Ver video"><svg><use href="#i-play"/></svg><span lang="es">Ver video</span><span lang="en">Watch video</span></button>
+              <img src="assets/img/projects/motor-scope.webp" alt="Respuesta al escalón del controlador PID en el osciloscopio" data-alt-en="PID step response on the oscilloscope" loading="lazy">
+              <button class="play" type="button" data-video="D_7jwuB7akw" aria-label="Ver video" data-label-en="Watch video"><svg><use href="#i-play"/></svg><span lang="es">Ver video</span><span lang="en">Watch video</span></button>
               <span class="ptag"><span lang="es">Control</span><span lang="en">Control</span></span>
             </div>
             <div class="pbody">
@@ -219,8 +218,8 @@
           <!-- PARQUEO -->
           <article class="card pcard reveal">
             <div class="pmedia">
-              <img src="assets/img/projects/parking-model.webp" alt="Maqueta del parqueo inteligente con pantalla TFT" loading="lazy">
-              <button class="play" type="button" data-video="16H7iwcB_EE" data-vertical aria-label="Ver video"><svg><use href="#i-play"/></svg><span lang="es">Ver video</span><span lang="en">Watch video</span></button>
+              <img src="assets/img/projects/parking-model.webp" alt="Maqueta del parqueo inteligente con pantalla TFT" data-alt-en="Smart parking lot model with a TFT screen" loading="lazy">
+              <button class="play" type="button" data-video="16H7iwcB_EE" data-vertical aria-label="Ver video" data-label-en="Watch video"><svg><use href="#i-play"/></svg><span lang="es">Ver video</span><span lang="en">Watch video</span></button>
               <span class="ptag"><span lang="es">Embebidos · IoT</span><span lang="en">Embedded · IoT</span></span>
             </div>
             <div class="pbody">
@@ -234,8 +233,8 @@
                 <button type="button" data-video="g0_ko9-PO1g"><svg><use href="#i-play"/></svg><span lang="es">Explicación del código</span><span lang="en">Code walkthrough</span></button>
               </div>
               <div class="pthumbs">
-                <img src="assets/img/projects/parking-web.webp" alt="Página web servida por el ESP32" loading="lazy" data-zoom>
-                <img src="assets/img/projects/parking-arch.webp" alt="Arquitectura de comunicación del parqueo" loading="lazy" data-zoom>
+                <img src="assets/img/projects/parking-web.webp" alt="Página web servida por el ESP32" data-alt-en="Web page served by the ESP32" loading="lazy" data-zoom>
+                <img src="assets/img/projects/parking-arch.webp" alt="Arquitectura de comunicación del parqueo" data-alt-en="Communication architecture of the parking lot" loading="lazy" data-zoom>
               </div>
             </div>
           </article>
@@ -252,7 +251,7 @@
             <h2><span lang="es">Más proyectos</span><span lang="en">More projects</span></h2>
           </div>
         </div>
-        <div class="filters reveal" role="group" aria-label="Filtrar proyectos">
+        <div class="filters reveal" role="group" aria-label="Filtrar proyectos" data-label-en="Filter projects">
           <button type="button" data-filter="all" aria-pressed="true"><span lang="es">Todos</span><span lang="en">All</span></button>
           <button type="button" data-filter="emb" aria-pressed="false"><span lang="es">Embebidos</span><span lang="en">Embedded</span></button>
           <button type="button" data-filter="elec" aria-pressed="false"><span lang="es">Electrónica</span><span lang="en">Electronics</span></button>
@@ -263,7 +262,7 @@
 
         <div class="ggrid">
           <article class="card gcard reveal" data-cat="emb">
-            <div class="gmedia"><img src="assets/img/projects/snake.webp" alt="Juego Snake en pantalla TFT" loading="lazy" data-zoom></div>
+            <div class="gmedia"><img src="assets/img/projects/snake.webp" alt="Juego Snake en pantalla TFT" data-alt-en="Snake game on a TFT screen" loading="lazy" data-zoom></div>
             <div class="gbody">
               <span class="pmeta"><span lang="es">Electrónica Digital 2 · 2025</span><span lang="en">Digital Electronics 2 · 2025</span></span>
               <h3><span lang="es">Videojuego Snake en STM32</span><span lang="en">Snake video game on STM32</span></h3>
@@ -278,7 +277,7 @@
           </article>
 
           <article class="card gcard reveal" data-cat="emb">
-            <div class="gmedia contain"><img src="assets/img/projects/loader.webp" alt="Esquemático de la pala cargadora" loading="lazy" data-zoom></div>
+            <div class="gmedia contain"><img src="assets/img/projects/loader.webp" alt="Esquemático de la pala cargadora" data-alt-en="Front loader schematic" loading="lazy" data-zoom></div>
             <div class="gbody">
               <span class="pmeta"><span lang="es">Programación de Microcontroladores · 2024</span><span lang="en">Microcontroller Programming · 2024</span></span>
               <h3><span lang="es">Pala cargadora con PIC</span><span lang="en">PIC-based front loader</span></h3>
@@ -293,7 +292,7 @@
           </article>
 
           <article class="card gcard reveal" data-cat="emb">
-            <div class="gmedia"><img src="assets/img/projects/clock.webp" alt="Reloj digital con displays de 7 segmentos" loading="lazy" data-zoom></div>
+            <div class="gmedia"><img src="assets/img/projects/clock.webp" alt="Reloj digital con displays de 7 segmentos" data-alt-en="Digital clock with 7-segment displays" loading="lazy" data-zoom></div>
             <div class="gbody">
               <span class="pmeta"><span lang="es">Programación de Microcontroladores · 2024</span><span lang="en">Microcontroller Programming · 2024</span></span>
               <h3><span lang="es">Reloj despertador en assembly</span><span lang="en">Alarm clock in assembly</span></h3>
@@ -308,7 +307,7 @@
           </article>
 
           <article class="card gcard reveal" data-cat="elec emb">
-            <div class="gmedia contain"><img src="assets/img/projects/fsm.webp" alt="Diagrama de bloques del sistema de máquinas de estado" loading="lazy" data-zoom></div>
+            <div class="gmedia contain"><img src="assets/img/projects/fsm.webp" alt="Diagrama de bloques del sistema de máquinas de estado" data-alt-en="Block diagram of the state-machine system" loading="lazy" data-zoom></div>
             <div class="gbody">
               <span class="pmeta"><span lang="es">Electrónica Digital 1 · 2023</span><span lang="en">Digital Electronics 1 · 2023</span></span>
               <h3><span lang="es">Máquinas de estado y CPU en FPGA</span><span lang="en">State machines and a CPU on an FPGA</span></h3>
@@ -319,7 +318,7 @@
           </article>
 
           <article class="card gcard reveal" data-cat="elec">
-            <div class="gmedia"><img src="assets/img/projects/equalizer.webp" alt="Esquemático del ecualizador de audio" loading="lazy" data-zoom></div>
+            <div class="gmedia"><img src="assets/img/projects/equalizer.webp" alt="Esquemático del ecualizador de audio" data-alt-en="Audio equalizer schematic" loading="lazy" data-zoom></div>
             <div class="gbody">
               <span class="pmeta"><span lang="es">Electrónica Analógica 1 · 2024</span><span lang="en">Analog Electronics 1 · 2024</span></span>
               <h3><span lang="es">Ecualizador de audio analógico</span><span lang="en">Analog audio equalizer</span></h3>
@@ -334,7 +333,7 @@
           </article>
 
           <article class="card gcard reveal" data-cat="elec">
-            <div class="gmedia"><img src="assets/img/projects/psu.webp" alt="Fuente de poder armada mostrando 14.9 V" loading="lazy" data-zoom></div>
+            <div class="gmedia"><img src="assets/img/projects/psu.webp" alt="Fuente de poder armada mostrando 14.9 V" data-alt-en="Assembled power supply reading 14.9 V" loading="lazy" data-zoom></div>
             <div class="gbody">
               <span class="pmeta"><span lang="es">Circuitos Eléctricos 1 · 2023</span><span lang="en">Electric Circuits 1 · 2023</span></span>
               <h3><span lang="es">Fuente de poder regulada</span><span lang="en">Regulated power supply</span></h3>
@@ -345,7 +344,7 @@
           </article>
 
           <article class="card gcard reveal" data-cat="ctrl">
-            <div class="gmedia"><img src="assets/img/projects/observer.webp" alt="Respuesta del sistema con observador de estados en osciloscopio" loading="lazy" data-zoom></div>
+            <div class="gmedia"><img src="assets/img/projects/observer.webp" alt="Respuesta del sistema con observador de estados en osciloscopio" data-alt-en="System response with a state observer on the oscilloscope" loading="lazy" data-zoom></div>
             <div class="gbody">
               <span class="pmeta"><span lang="es">Sistemas de Control 2 · 2026</span><span lang="en">Control Systems 2 · 2026</span></span>
               <h3><span lang="es">Control por espacio de estados</span><span lang="en">State-space control</span></h3>
@@ -356,7 +355,7 @@
           </article>
 
           <article class="card gcard reveal" data-cat="mech">
-            <div class="gmedia"><img src="assets/img/projects/sealer-fea.webp" alt="Análisis de esfuerzos de la selladora en Inventor" loading="lazy" data-zoom></div>
+            <div class="gmedia"><img data-credit src="assets/img/projects/sealer-fea.webp" alt="Análisis de esfuerzos de la selladora en Inventor" data-alt-en="Stress analysis of the sealing machine in Inventor" loading="lazy" data-zoom><span class="credit"><span lang="es">Captura de Autodesk Inventor · cortesía de Autodesk, Inc.</span><span lang="en">Autodesk Inventor screenshot · courtesy of Autodesk, Inc.</span></span></div>
             <div class="gbody">
               <span class="pmeta"><span lang="es">Diseño de Ingeniería Mecánica 2 · 2025</span><span lang="en">Mechanical Engineering Design 2 · 2025</span></span>
               <h3><span lang="es">Selladora con caja reductora</span><span lang="en">Sealing machine with a gearbox</span></h3>
@@ -364,14 +363,14 @@
               <p lang="en">Individual design challenge: a sealing machine with a four-bar linkage and a two-stage gearbox that goes from 1170 to 50 rpm at 1 hp, with over 95% efficiency and over 12,000 h of life. AGMA gears, shafts, bearings and keys. Stress analysis peaked at 25.8 ksi.</p>
               <ul class="chips"><li>Inventor</li><li>FEA</li><li>AGMA</li></ul>
               <div class="pthumbs sm">
-                <img src="assets/img/projects/sealer.webp" alt="Ensamble final de la selladora" loading="lazy" data-zoom>
-                <img src="assets/img/projects/sealer-gears.webp" alt="Diseño de cuñas y engranes en Inventor" loading="lazy" data-zoom>
+                <img data-credit src="assets/img/projects/sealer.webp" alt="Ensamble final de la selladora" data-alt-en="Final sealing machine assembly" loading="lazy" data-zoom>
+                <img data-credit src="assets/img/projects/sealer-gears.webp" alt="Diseño de cuñas y engranes en Inventor" data-alt-en="Key and gear design in Inventor" loading="lazy" data-zoom>
               </div>
             </div>
           </article>
 
           <article class="card gcard reveal" data-cat="mech">
-            <div class="gmedia contain"><img src="assets/img/projects/doser.webp" alt="Modelo del dosificador volumétrico" loading="lazy" data-zoom></div>
+            <div class="gmedia contain"><img data-credit src="assets/img/projects/doser.webp" alt="Modelo del dosificador volumétrico" data-alt-en="Model of the volumetric dispenser" loading="lazy" data-zoom><span class="credit"><span lang="es">Captura de Autodesk Inventor · cortesía de Autodesk, Inc.</span><span lang="en">Autodesk Inventor screenshot · courtesy of Autodesk, Inc.</span></span></div>
             <div class="gbody">
               <span class="pmeta"><span lang="es">Mecanismos · 2025</span><span lang="en">Mechanisms · 2025</span></span>
               <h3><span lang="es">Dosificador de líquidos viscosos</span><span lang="en">Viscous liquid dispenser</span></h3>
@@ -383,7 +382,7 @@
           </article>
 
           <article class="card gcard reveal" data-cat="mech">
-            <div class="gmedia contain"><img src="assets/img/projects/lift.webp" alt="Ensamble del elevador de motocicletas" loading="lazy" data-zoom></div>
+            <div class="gmedia contain"><img data-credit src="assets/img/projects/lift.webp" alt="Ensamble del elevador de motocicletas" data-alt-en="Motorcycle lift assembly" loading="lazy" data-zoom><span class="credit"><span lang="es">Captura de Autodesk Inventor · cortesía de Autodesk, Inc.</span><span lang="en">Autodesk Inventor screenshot · courtesy of Autodesk, Inc.</span></span></div>
             <div class="gbody">
               <span class="pmeta"><span lang="es">Diseño de Ingeniería Mecánica 1 · 2025</span><span lang="en">Mechanical Engineering Design 1 · 2025</span></span>
               <h3><span lang="es">Elevador de motocicletas</span><span lang="en">Motorcycle lift</span></h3>
@@ -394,7 +393,7 @@
           </article>
 
           <article class="card gcard reveal" data-cat="mech">
-            <div class="gmedia contain"><img src="assets/img/projects/worm.webp" alt="Corona del sistema de tornillo sinfín" loading="lazy" data-zoom></div>
+            <div class="gmedia contain"><img data-credit src="assets/img/projects/worm.webp" alt="Corona del sistema de tornillo sinfín" data-alt-en="Worm wheel of the worm-gear drive" loading="lazy" data-zoom><span class="credit"><span lang="es">Captura de Autodesk Inventor · cortesía de Autodesk, Inc.</span><span lang="en">Autodesk Inventor screenshot · courtesy of Autodesk, Inc.</span></span></div>
             <div class="gbody">
               <span class="pmeta"><span lang="es">Diseño de Ingeniería Mecánica 1 · 2025</span><span lang="en">Mechanical Engineering Design 1 · 2025</span></span>
               <h3><span lang="es">Transmisión de potencia con tornillo sinfín</span><span lang="en">Worm-gear power transmission</span></h3>
@@ -405,7 +404,7 @@
           </article>
 
           <article class="card gcard reveal" data-cat="data">
-            <div class="gmedia contain"><img src="assets/img/projects/wine.webp" alt="Comparación de precisión entre modelos de clasificación" loading="lazy" data-zoom></div>
+            <div class="gmedia contain"><img src="assets/img/projects/wine.webp" alt="Comparación de precisión entre modelos de clasificación" data-alt-en="Accuracy comparison between classification models" loading="lazy" data-zoom></div>
             <div class="gbody">
               <span class="pmeta">Data Mining &amp; Machine Learning · 2025</span>
               <h3><span lang="es">Clasificación de vinos con machine learning</span><span lang="en">Wine classification with machine learning</span></h3>
@@ -444,7 +443,7 @@
               </h3>
               <p lang="es">Rediseñé la electrónica de un marchamo de seguridad cuyo diseño tenía unos 20 años. Entregué una prueba de concepto que corrige vulnerabilidades importantes del diseño anterior y agrega funciones nuevas.</p>
               <p lang="en">Redesigned the electronics of a security seal whose design was about 20 years old. Delivered a proof of concept that fixes major vulnerabilities in the previous design and adds new features.</p>
-              <div class="blocks" aria-label="Diagrama general">
+              <div class="blocks" aria-label="Diagrama general" data-label-en="Overview diagram">
                 <span lang="es">Microcontrolador</span><span lang="en">Microcontroller</span><i>↔</i>
                 <span lang="es">Lector NFC</span><span lang="en">NFC reader</span><i>↔</i>
                 <span lang="es">Apertura remota</span><span lang="en">Remote unlock</span><i>→</i>
@@ -538,7 +537,7 @@
           <div class="card skill reveal"><h3><span lang="es">Comunicación y periféricos</span><span lang="en">Comms &amp; peripherals</span></h3>
             <ul class="chips"><li>UART</li><li>SPI</li><li>I2C</li><li>ADC / DAC</li><li>PWM</li><li>WiFi / UDP</li><li>Bluetooth</li><li>NFC</li></ul></div>
           <div class="card skill reveal"><h3><span lang="es">Automatización industrial</span><span lang="en">Industrial automation</span></h3>
-            <ul class="chips"><li>PLC Siemens (TIA Portal)</li><li>STL / Ladder</li><li>HMI</li><li>VFD</li><li><span lang="es">Neumática</span><span lang="en">Pneumatics</span></li></ul></div>
+            <ul class="chips"><li>PLC Siemens (TIA Portal)</li><li>STL / Ladder</li><li>HMI</li><li><span lang="es">Neumática</span><span lang="en">Pneumatics</span></li></ul></div>
           <div class="card skill reveal"><h3><span lang="es">Control y simulación</span><span lang="en">Control &amp; simulation</span></h3>
             <ul class="chips"><li>PID</li><li><span lang="es">Espacio de estados</span><span lang="en">State space</span></li><li>MATLAB</li><li>Simulink</li><li>Simscape</li></ul></div>
           <div class="card skill reveal"><h3><span lang="es">Diseño y manufactura</span><span lang="en">Design &amp; manufacturing</span></h3>
@@ -592,7 +591,7 @@
     <section class="section" id="contacto">
       <div class="container">
         <div class="contact reveal">
-          <img class="avatar" src="assets/img/profile.webp" alt="Diego Duarte" width="96" height="96" loading="lazy">
+          <img class="avatar" src="assets/img/profile.webp" alt="Diego Duarte" data-alt-en="Diego Duarte" width="96" height="96" loading="lazy">
           <span class="kicker" style="color:var(--sky)"><span lang="es">Contacto</span><span lang="en">Contact</span></span>
           <h2><span lang="es">¿Hablamos?</span><span lang="en">Let's talk</span></h2>
           <p lang="es">Busco mi primer puesto como ingeniero en robótica, sistemas embebidos, automatización o desarrollo de producto. Respondo rápido.</p>
@@ -616,11 +615,12 @@
   <footer>
     <div class="container">
       <span>© <span data-year>2026</span> Diego Duarte Grajeda</span>
+      <span class="foot-credit"><span lang="es">Las capturas de pantalla de Autodesk Inventor se reimprimen por cortesía de Autodesk, Inc.</span><span lang="en">Autodesk Inventor screenshots reprinted courtesy of Autodesk, Inc.</span></span>
       <span lang="es">Hecho a mano · alojado en GitHub Pages</span>
       <span lang="en">Hand-built · hosted on GitHub Pages</span>
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=3"></script>
+  <script src="assets/js/main.js?v=5"></script>
 </body>
 </html>
