@@ -43,6 +43,52 @@
     dlg.showModal();
   });
 
+  // ---- Visor de video (YouTube, se carga solo al hacer clic) ----
+  const vbox = document.createElement('dialog');
+  vbox.className = 'vbox';
+  vbox.innerHTML = '<button class="vclose" type="button" aria-label="Cerrar">×</button><div class="frame16"></div>' +
+    '<a target="_blank" rel="noopener"><span lang="es">Abrir en YouTube ↗</span><span lang="en">Open on YouTube ↗</span></a>';
+  document.body.appendChild(vbox);
+  const vFrame = vbox.querySelector('.frame16'), vLink = vbox.querySelector('a');
+  function closeVideo() { vFrame.innerHTML = ''; if (vbox.open) vbox.close(); }
+  vbox.querySelector('.vclose').addEventListener('click', closeVideo);
+  vbox.addEventListener('click', e => { if (e.target === vbox) closeVideo(); });
+  vbox.addEventListener('close', () => { vFrame.innerHTML = ''; });
+  document.addEventListener('click', e => {
+    const b = e.target.closest('[data-video]');
+    if (!b) return;
+    const id = b.dataset.video;
+    const url = 'https://www.youtube.com/watch?v=' + id;
+    if (typeof vbox.showModal !== 'function') { window.open(url, '_blank', 'noopener'); return; }
+    vbox.classList.toggle('vertical', b.hasAttribute('data-vertical'));
+    vFrame.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) +
+      '?autoplay=1&rel=0&modestbranding=1" title="Video del proyecto" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+    vLink.href = url;
+    vbox.showModal();
+  });
+
+  // ---- Filtros de proyectos ----
+  const fButtons = document.querySelectorAll('[data-filter]');
+  fButtons.forEach(btn => btn.addEventListener('click', () => {
+    const f = btn.dataset.filter;
+    fButtons.forEach(x => x.setAttribute('aria-pressed', String(x === btn)));
+    document.querySelectorAll('.gcard[data-cat]').forEach(card => {
+      const show = f === 'all' || card.dataset.cat.split(' ').includes(f);
+      card.hidden = !show;
+      if (show) card.classList.add('in');
+    });
+  }));
+
+  // ---- Videos en bucle: reproducir solo cuando se ven ----
+  if ('IntersectionObserver' in window) {
+    const vio = new IntersectionObserver(entries => entries.forEach(en => {
+      const v = en.target;
+      if (en.isIntersecting) { if (v.preload === 'none') v.preload = 'auto'; v.play().catch(() => {}); }
+      else v.pause();
+    }), { threshold: 0.25 });
+    document.querySelectorAll('video[autoplay][loop]').forEach(v => vio.observe(v));
+  }
+
   // ---- Aparición suave ----
   const els = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {

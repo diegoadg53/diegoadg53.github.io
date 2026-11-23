@@ -25,6 +25,10 @@
 </head>
 <body>
   <a class="skip" href="#main">Saltar al contenido</a>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-gh" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></symbol>
+  </svg>
 
   <header class="nav">
     <div class="container">
@@ -80,7 +84,7 @@
             </a>
           </div>
           <div class="hero-tags">
-            <span>C / C++</span><span>Python</span><span>STM32</span><span>ESP32</span><span>Portenta H7</span><span>YOLO</span><span>Autodesk Inventor</span>
+            <span>C / C++</span><span>Python</span><span>STM32</span><span>ESP32</span><span>PLC Siemens</span><span>Altium</span><span>YOLO</span><span>Autodesk Inventor</span>
           </div>
         </div>
         <div class="hero-media">
@@ -141,6 +145,280 @@
       </div>
     </section>
 
+    <!-- ================= PROYECTOS DESTACADOS ================= -->
+    <section class="section" id="destacados">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="kicker"><span lang="es">Más allá de la tesis</span><span lang="en">Beyond the thesis</span></span>
+            <h2><span lang="es">Proyectos destacados</span><span lang="en">Featured projects</span></h2>
+          </div>
+          <p lang="es">Cuatro proyectos de la carrera, cada uno de un área distinta: automatización industrial, diseño de PCB, control y sistemas embebidos. Todos tienen video funcionando.</p>
+          <p lang="en">Four university projects, each from a different area: industrial automation, PCB design, control and embedded systems. All of them have working video.</p>
+        </div>
+
+        <div class="pgrid">
+          <!-- PLC -->
+          <article class="card pcard reveal">
+            <div class="pmedia">
+              <img src="assets/img/projects/auto-delta.webp" alt="Banda transportadora con robot delta controlado por PLC" loading="lazy">
+              <button class="play" type="button" data-video="_epjnVA-gyE" data-vertical aria-label="Ver video"><svg><use href="#i-play"/></svg><span lang="es">Ver video</span><span lang="en">Watch video</span></button>
+              <span class="ptag"><span lang="es">Automatización</span><span lang="en">Automation</span></span>
+            </div>
+            <div class="pbody">
+              <span class="pmeta"><span lang="es">Instrumentación y Automatización Industrial 2 · 2025</span><span lang="en">Industrial Instrumentation &amp; Automation 2 · 2025</span></span>
+              <h3><span lang="es">Automatización con PLC Siemens</span><span lang="en">Siemens PLC automation</span></h3>
+              <p lang="es">Dos líneas de producción programadas en un PLC Siemens. La primera es una <strong>máquina clasificadora con robot delta</strong>, coordinada entre el PLC y un Arduino. La segunda es una <strong>banda de control de calidad de 12 estaciones</strong> escrita en STL: mide color, peso, tamaño y temperatura, sigue cada producto con un shift register y rechaza los defectuosos en la estación 11.</p>
+              <p lang="en">Two production lines programmed on a Siemens PLC. The first is a <strong>sorting machine with a delta robot</strong>, coordinated between the PLC and an Arduino. The second is a <strong>12-station quality-control conveyor</strong> written in STL: it measures color, weight, size and temperature, tracks each product with a shift register and rejects defective ones at station 11.</p>
+              <ul class="chips"><li>PLC Siemens</li><li>STL</li><li>HMI</li><li>VFD</li><li><span lang="es">Robot delta</span><span lang="en">Delta robot</span></li></ul>
+              <div class="pthumbs">
+                <img src="assets/img/projects/auto-hmi.webp" alt="Pantalla de parámetros configurables en la HMI" loading="lazy" data-zoom>
+                <img src="assets/img/projects/auto-diagram.webp" alt="Diagrama de proceso y eléctrico de la clasificadora" loading="lazy" data-zoom>
+                <img src="assets/img/projects/auto-panel.webp" alt="Tablero con variador de frecuencia" loading="lazy" data-zoom>
+              </div>
+            </div>
+          </article>
+
+          <!-- SUMO -->
+          <article class="card pcard reveal">
+            <div class="pmedia">
+              <video autoplay muted loop playsinline preload="none" poster="assets/video/sumo-match.webp" aria-label="Robot sumo en competencia"><source src="assets/video/sumo-match.mp4" type="video/mp4"></video>
+              <button class="play" type="button" data-video="FS1At9vrlMY" aria-label="Ver video"><svg><use href="#i-play"/></svg><span lang="es">Ver video</span><span lang="en">Watch video</span></button>
+              <span class="ptag"><span lang="es">PCB · Electrónica</span><span lang="en">PCB · Electronics</span></span>
+            </div>
+            <div class="pbody">
+              <span class="pmeta"><span lang="es">Simulación de Circuitos y Fabricación de PCB · 2024</span><span lang="en">Circuit Simulation &amp; PCB Fabrication · 2024</span></span>
+              <h3><span lang="es">Robot sumo "Pig God" con PCB propia</span><span lang="en">"Pig God" sumo robot on a custom PCB</span></h3>
+              <p lang="es">Robot de sumo controlado por Bluetooth desde el celular. Diseñé la <strong>PCB en Altium</strong> (esquemático, componentes, verificación de reglas y Gerbers), modelé la estructura de MDF en <strong>Inventor</strong> para corte láser y lo armé para la competencia del curso. En una revisión eliminé el regulador de la placa para aprovechar el del puente H.</p>
+              <p lang="en">A sumo robot controlled over Bluetooth from a phone. I designed the <strong>PCB in Altium</strong> (schematic, components, design-rule check and Gerbers), modeled the laser-cut MDF body in <strong>Inventor</strong> and built it for the course competition. In one revision I removed the on-board regulator to reuse the one on the H-bridge.</p>
+              <ul class="chips"><li>Altium</li><li>Inventor</li><li>ESP32</li><li>L298N</li><li>Bluetooth</li></ul>
+              <div class="pthumbs">
+                <img src="assets/img/projects/sumo-pcb.webp" alt="Diseño de la PCB del robot sumo en Altium" loading="lazy" data-zoom>
+                <img src="assets/img/projects/sumo-schematic.webp" alt="Esquemático del robot sumo" loading="lazy" data-zoom>
+                <img src="assets/img/projects/sumo-cad.webp" alt="Modelo de la estructura en Inventor" loading="lazy" data-zoom>
+              </div>
+            </div>
+          </article>
+
+          <!-- MOTOR DC -->
+          <article class="card pcard reveal">
+            <div class="pmedia">
+              <img src="assets/img/projects/motor-scope.webp" alt="Respuesta al escalón del controlador PID en el osciloscopio" loading="lazy">
+              <button class="play" type="button" data-video="D_7jwuB7akw" aria-label="Ver video"><svg><use href="#i-play"/></svg><span lang="es">Ver video</span><span lang="en">Watch video</span></button>
+              <span class="ptag"><span lang="es">Control</span><span lang="en">Control</span></span>
+            </div>
+            <div class="pbody">
+              <span class="pmeta"><span lang="es">Sistemas de Control 1 · 2025</span><span lang="en">Control Systems 1 · 2025</span></span>
+              <h3><span lang="es">Controlador PID para un motor DC</span><span lang="en">PID controller for a DC motor</span></h3>
+              <p lang="es">Diseñé un controlador para un motor DC y lo implementé en una <strong>Nucleo-F446RE</strong>. El <strong>PID discreto</strong> corre a 1 kHz en la interrupción de un timer, con derivada filtrada y saturación del actuador. Lee la referencia y el sensor por ADC y entrega la acción de control por DAC. En el laboratorio previo, el PID digital logró un sobrepaso de 11.5 % y un tiempo de asentamiento de 48 ms.</p>
+              <p lang="en">I designed a controller for a DC motor and implemented it on a <strong>Nucleo-F446RE</strong>. The <strong>discrete PID</strong> runs at 1 kHz in a timer interrupt, with a filtered derivative and actuator saturation. It reads the reference and the sensor through the ADC and outputs the control action through the DAC. In the previous lab, the digital PID reached 11.5% overshoot and a 48 ms settling time.</p>
+              <ul class="chips"><li>PID</li><li>STM32</li><li>ADC / DAC</li><li>MATLAB</li></ul>
+            </div>
+          </article>
+
+          <!-- PARQUEO -->
+          <article class="card pcard reveal">
+            <div class="pmedia">
+              <img src="assets/img/projects/parking-model.webp" alt="Maqueta del parqueo inteligente con pantalla TFT" loading="lazy">
+              <button class="play" type="button" data-video="16H7iwcB_EE" data-vertical aria-label="Ver video"><svg><use href="#i-play"/></svg><span lang="es">Ver video</span><span lang="en">Watch video</span></button>
+              <span class="ptag"><span lang="es">Embebidos · IoT</span><span lang="en">Embedded · IoT</span></span>
+            </div>
+            <div class="pbody">
+              <span class="pmeta"><span lang="es">Electrónica Digital 2 · 2025</span><span lang="en">Digital Electronics 2 · 2025</span></span>
+              <h3><span lang="es">Parqueo inteligente con servidor web</span><span lang="en">Smart parking lot with a web server</span></h3>
+              <p lang="es">Sensores infrarrojos detectan qué espacios están ocupados. Dos <strong>Nucleo</strong> los leen y los envían por <strong>I2C</strong> a un <strong>ESP32</strong>, que reparte los datos entre una pantalla TFT y un display de 7 segmentos. El ESP32 también genera su propia red WiFi y sirve una página web con el estado del parqueo en tiempo real, con imágenes guardadas en su memoria flash.</p>
+              <p lang="en">Infrared sensors detect which spaces are taken. Two <strong>Nucleo</strong> boards read them and send the data over <strong>I2C</strong> to an <strong>ESP32</strong>, which shares it between a TFT screen and a 7-segment display. The ESP32 also runs its own WiFi network and serves a web page with the lot's status in real time, using images stored in its flash memory.</p>
+              <ul class="chips"><li>ESP32</li><li>STM32</li><li>I2C</li><li><span lang="es">Servidor web</span><span lang="en">Web server</span></li><li>TFT</li></ul>
+              <div class="plinks">
+                <a href="https://github.com/diegoadg53/D2_Proyecto3" target="_blank" rel="noopener"><svg><use href="#i-gh"/></svg><span lang="es">Código</span><span lang="en">Code</span></a>
+                <button type="button" data-video="g0_ko9-PO1g"><svg><use href="#i-play"/></svg><span lang="es">Explicación del código</span><span lang="en">Code walkthrough</span></button>
+              </div>
+              <div class="pthumbs">
+                <img src="assets/img/projects/parking-web.webp" alt="Página web servida por el ESP32" loading="lazy" data-zoom>
+                <img src="assets/img/projects/parking-arch.webp" alt="Arquitectura de comunicación del parqueo" loading="lazy" data-zoom>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MÁS PROYECTOS ================= -->
+    <section class="section" id="otros">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="kicker"><span lang="es">Universidad</span><span lang="en">University</span></span>
+            <h2><span lang="es">Más proyectos</span><span lang="en">More projects</span></h2>
+          </div>
+        </div>
+        <div class="filters reveal" role="group" aria-label="Filtrar proyectos">
+          <button type="button" data-filter="all" aria-pressed="true"><span lang="es">Todos</span><span lang="en">All</span></button>
+          <button type="button" data-filter="emb" aria-pressed="false"><span lang="es">Embebidos</span><span lang="en">Embedded</span></button>
+          <button type="button" data-filter="elec" aria-pressed="false"><span lang="es">Electrónica</span><span lang="en">Electronics</span></button>
+          <button type="button" data-filter="ctrl" aria-pressed="false"><span lang="es">Control</span><span lang="en">Control</span></button>
+          <button type="button" data-filter="mech" aria-pressed="false"><span lang="es">Diseño mecánico</span><span lang="en">Mechanical design</span></button>
+          <button type="button" data-filter="data" aria-pressed="false"><span lang="es">Datos e IA</span><span lang="en">Data &amp; AI</span></button>
+        </div>
+
+        <div class="ggrid">
+          <article class="card gcard reveal" data-cat="emb">
+            <div class="gmedia"><img src="assets/img/projects/snake.webp" alt="Juego Snake en pantalla TFT" loading="lazy" data-zoom></div>
+            <div class="gbody">
+              <span class="pmeta"><span lang="es">Electrónica Digital 2 · 2025</span><span lang="en">Digital Electronics 2 · 2025</span></span>
+              <h3><span lang="es">Videojuego Snake en STM32</span><span lang="en">Snake video game on STM32</span></h3>
+              <p lang="es">Dos jugadores en una pantalla TFT. Una segunda Nucleo reproduce la música y los efectos con el DAC, y recibe los eventos del juego por UART. Los sprites los pasé a binario con un script en Python.</p>
+              <p lang="en">Two players on a TFT screen. A second Nucleo plays the music and sound effects through its DAC and gets game events over UART. I converted the sprites to binary with a Python script.</p>
+              <ul class="chips"><li>STM32</li><li>TFT</li><li>DAC</li><li>UART</li></ul>
+              <div class="plinks">
+                <button type="button" data-video="rYL7zWlZhww"><svg><use href="#i-play"/></svg>Video</button>
+                <a href="https://github.com/diegoadg53/D2_Proyecto2" target="_blank" rel="noopener"><svg><use href="#i-gh"/></svg><span lang="es">Código</span><span lang="en">Code</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card gcard reveal" data-cat="emb">
+            <div class="gmedia contain"><img src="assets/img/projects/loader.webp" alt="Esquemático de la pala cargadora" loading="lazy" data-zoom></div>
+            <div class="gbody">
+              <span class="pmeta"><span lang="es">Programación de Microcontroladores · 2024</span><span lang="en">Microcontroller Programming · 2024</span></span>
+              <h3><span lang="es">Pala cargadora con PIC</span><span lang="en">PIC-based front loader</span></h3>
+              <p lang="es">Maqueta de pala cargadora con servos controlados por PWM generado con los timers de un PIC, posiciones guardadas en EEPROM y un modo de control remoto por internet con Adafruit IO.</p>
+              <p lang="en">A front-loader model whose servos are driven by PWM from a PIC's timers, with positions saved to EEPROM and a remote-control mode over the internet through Adafruit IO.</p>
+              <ul class="chips"><li>PIC</li><li>PWM</li><li>Timers</li><li>EEPROM</li><li>IoT</li></ul>
+              <div class="plinks">
+                <button type="button" data-video="Ye0tiEHtx4Q"><svg><use href="#i-play"/></svg>Video</button>
+                <a href="https://github.com/diegoadg53/Proyecto_PalaCargadora" target="_blank" rel="noopener"><svg><use href="#i-gh"/></svg><span lang="es">Código</span><span lang="en">Code</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card gcard reveal" data-cat="emb">
+            <div class="gmedia"><img src="assets/img/projects/clock.webp" alt="Reloj digital con displays de 7 segmentos" loading="lazy" data-zoom></div>
+            <div class="gbody">
+              <span class="pmeta"><span lang="es">Programación de Microcontroladores · 2024</span><span lang="en">Microcontroller Programming · 2024</span></span>
+              <h3><span lang="es">Reloj despertador en assembly</span><span lang="en">Alarm clock in assembly</span></h3>
+              <p lang="es">Reloj con alarma programado en assembly de PIC, con timers e interrupciones calculados a mano y multiplexación de displays.</p>
+              <p lang="en">A clock with an alarm, written in PIC assembly, with hand-calculated timers and interrupts and multiplexed displays.</p>
+              <ul class="chips"><li>Assembly</li><li>PIC</li><li><span lang="es">Interrupciones</span><span lang="en">Interrupts</span></li></ul>
+              <div class="plinks">
+                <button type="button" data-video="RE0sxVMKf9I"><svg><use href="#i-play"/></svg>Video</button>
+                <a href="https://github.com/diegoadg53/Proyecto1_RelojAlarma" target="_blank" rel="noopener"><svg><use href="#i-gh"/></svg><span lang="es">Código</span><span lang="en">Code</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card gcard reveal" data-cat="elec emb">
+            <div class="gmedia contain"><img src="assets/img/projects/fsm.webp" alt="Diagrama de bloques del sistema de máquinas de estado" loading="lazy" data-zoom></div>
+            <div class="gbody">
+              <span class="pmeta"><span lang="es">Electrónica Digital 1 · 2023</span><span lang="en">Digital Electronics 1 · 2023</span></span>
+              <h3><span lang="es">Máquinas de estado y CPU en FPGA</span><span lang="en">State machines and a CPU on an FPGA</span></h3>
+              <p lang="es">Un sistema de máquinas de estado que monitorea un cultivo de caña (temperatura, humedad, altura, fuego) y un microprocesador propio en Verilog, con testbench y un ensamblador escrito en Python.</p>
+              <p lang="en">A state-machine system that monitors a sugarcane crop (temperature, humidity, height, fire) and a custom microprocessor in Verilog, with a testbench and an assembler written in Python.</p>
+              <ul class="chips"><li>Verilog</li><li>FPGA</li><li>FSM</li><li>Python</li></ul>
+            </div>
+          </article>
+
+          <article class="card gcard reveal" data-cat="elec">
+            <div class="gmedia"><img src="assets/img/projects/equalizer.webp" alt="Esquemático del ecualizador de audio" loading="lazy" data-zoom></div>
+            <div class="gbody">
+              <span class="pmeta"><span lang="es">Electrónica Analógica 1 · 2024</span><span lang="en">Analog Electronics 1 · 2024</span></span>
+              <h3><span lang="es">Ecualizador de audio analógico</span><span lang="en">Analog audio equalizer</span></h3>
+              <p lang="es">Ecualizador por bandas de frecuencia con filtros activos y amplificadores operacionales, diseñado, simulado y armado en protoboard.</p>
+              <p lang="en">A multi-band equalizer with active filters and op-amps, designed, simulated and built on a breadboard.</p>
+              <ul class="chips"><li>Op-amps</li><li><span lang="es">Filtros activos</span><span lang="en">Active filters</span></li></ul>
+              <div class="plinks">
+                <button type="button" data-video="eX5Sgzmp-3A"><svg><use href="#i-play"/></svg>Video</button>
+                <button type="button" data-video="_jMbyPdr1vs"><svg><use href="#i-play"/></svg><span lang="es">Amplificador para bocina</span><span lang="en">Speaker amplifier</span></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card gcard reveal" data-cat="elec">
+            <div class="gmedia"><img src="assets/img/projects/psu.webp" alt="Fuente de poder armada mostrando 14.9 V" loading="lazy" data-zoom></div>
+            <div class="gbody">
+              <span class="pmeta"><span lang="es">Circuitos Eléctricos 1 · 2023</span><span lang="en">Electric Circuits 1 · 2023</span></span>
+              <h3><span lang="es">Fuente de poder regulada</span><span lang="en">Regulated power supply</span></h3>
+              <p lang="es">Fuente armada y soldada por etapas (transformador, rectificador, filtro y regulador), caracterizando cada una con osciloscopio y multímetro.</p>
+              <p lang="en">A power supply built and soldered stage by stage (transformer, rectifier, filter and regulator), characterizing each one with an oscilloscope and a multimeter.</p>
+              <ul class="chips"><li><span lang="es">Soldadura</span><span lang="en">Soldering</span></li><li><span lang="es">Osciloscopio</span><span lang="en">Oscilloscope</span></li></ul>
+            </div>
+          </article>
+
+          <article class="card gcard reveal" data-cat="ctrl">
+            <div class="gmedia"><img src="assets/img/projects/observer.webp" alt="Respuesta del sistema con observador de estados en osciloscopio" loading="lazy" data-zoom></div>
+            <div class="gbody">
+              <span class="pmeta"><span lang="es">Sistemas de Control 2 · 2026</span><span lang="en">Control Systems 2 · 2026</span></span>
+              <h3><span lang="es">Control por espacio de estados</span><span lang="en">State-space control</span></h3>
+              <p lang="es">Diseño por asignación de polos y observadores de estado, simulados en Simulink y Simscape e implementados en una STM32 sobre un circuito real.</p>
+              <p lang="en">Pole-placement design and state observers, simulated in Simulink and Simscape and implemented on an STM32 driving a real circuit.</p>
+              <ul class="chips"><li>Simulink</li><li>Simscape</li><li>STM32</li></ul>
+            </div>
+          </article>
+
+          <article class="card gcard reveal" data-cat="mech">
+            <div class="gmedia"><img src="assets/img/projects/sealer-fea.webp" alt="Análisis de esfuerzos de la selladora en Inventor" loading="lazy" data-zoom></div>
+            <div class="gbody">
+              <span class="pmeta"><span lang="es">Diseño de Ingeniería Mecánica 2 · 2025</span><span lang="en">Mechanical Engineering Design 2 · 2025</span></span>
+              <h3><span lang="es">Selladora con caja reductora</span><span lang="en">Sealing machine with a gearbox</span></h3>
+              <p lang="es">Reto de diseño individual: selladora con mecanismo de 4 barras y reductor de dos etapas que baja de 1170 a 50 rpm con 1 hp, más de 95 % de eficiencia y más de 12 000 h de vida. Engranes según AGMA, ejes, rodamientos y cuñas. El análisis de esfuerzos dio un máximo de 25.8 ksi.</p>
+              <p lang="en">Individual design challenge: a sealing machine with a four-bar linkage and a two-stage gearbox that goes from 1170 to 50 rpm at 1 hp, with over 95% efficiency and over 12,000 h of life. AGMA gears, shafts, bearings and keys. Stress analysis peaked at 25.8 ksi.</p>
+              <ul class="chips"><li>Inventor</li><li>FEA</li><li>AGMA</li></ul>
+              <div class="pthumbs sm">
+                <img src="assets/img/projects/sealer.webp" alt="Ensamble final de la selladora" loading="lazy" data-zoom>
+                <img src="assets/img/projects/sealer-gears.webp" alt="Diseño de cuñas y engranes en Inventor" loading="lazy" data-zoom>
+              </div>
+            </div>
+          </article>
+
+          <article class="card gcard reveal" data-cat="mech">
+            <div class="gmedia contain"><img src="assets/img/projects/doser.webp" alt="Modelo del dosificador volumétrico" loading="lazy" data-zoom></div>
+            <div class="gbody">
+              <span class="pmeta"><span lang="es">Mecanismos · 2025</span><span lang="en">Mechanisms · 2025</span></span>
+              <h3><span lang="es">Dosificador de líquidos viscosos</span><span lang="en">Viscous liquid dispenser</span></h3>
+              <p lang="es">Mecanismo de manivela-corredera que empuja un pistón para dosificar volúmenes. Incluye síntesis, análisis de posición y velocidad validado con video, manufactura y prototipo funcional.</p>
+              <p lang="en">A slider-crank mechanism that drives a piston to dispense set volumes. It includes synthesis, position and velocity analysis validated against video, manufacturing and a working prototype.</p>
+              <ul class="chips"><li><span lang="es">Cinemática</span><span lang="en">Kinematics</span></li><li>Inventor</li><li><span lang="es">Prototipo</span><span lang="en">Prototype</span></li></ul>
+              <div class="plinks"><button type="button" data-video="b9beTGpB3oE" data-vertical><svg><use href="#i-play"/></svg>Video</button></div>
+            </div>
+          </article>
+
+          <article class="card gcard reveal" data-cat="mech">
+            <div class="gmedia contain"><img src="assets/img/projects/lift.webp" alt="Ensamble del elevador de motocicletas" loading="lazy" data-zoom></div>
+            <div class="gbody">
+              <span class="pmeta"><span lang="es">Diseño de Ingeniería Mecánica 1 · 2025</span><span lang="en">Mechanical Engineering Design 1 · 2025</span></span>
+              <h3><span lang="es">Elevador de motocicletas</span><span lang="en">Motorcycle lift</span></h3>
+              <p lang="es">Elevador de tijera con tornillo de potencia: análisis de esfuerzos por posición, selección de materiales, planos según ASME Y14.5 con soldaduras y lista de partes con costos.</p>
+              <p lang="en">A scissor lift with a power screw: stress analysis at each position, material selection, ASME Y14.5 drawings with welds, and a costed parts list.</p>
+              <ul class="chips"><li>Inventor</li><li>ASME Y14.5</li><li><span lang="es">Diseño de máquinas</span><span lang="en">Machine design</span></li></ul>
+            </div>
+          </article>
+
+          <article class="card gcard reveal" data-cat="mech">
+            <div class="gmedia contain"><img src="assets/img/projects/worm.webp" alt="Corona del sistema de tornillo sinfín" loading="lazy" data-zoom></div>
+            <div class="gbody">
+              <span class="pmeta"><span lang="es">Diseño de Ingeniería Mecánica 1 · 2025</span><span lang="en">Mechanical Engineering Design 1 · 2025</span></span>
+              <h3><span lang="es">Transmisión de potencia con tornillo sinfín</span><span lang="en">Worm-gear power transmission</span></h3>
+              <p lang="es">Transmisión para mover 500 kg en una banda: selección de motor, faja y par sinfín-corona, con una eficiencia de 92.3 % y una vida estimada de 25 000 h.</p>
+              <p lang="en">A drive to move 500 kg on a conveyor: motor, belt and worm-gear selection, with 92.3% efficiency and an estimated 25,000 h of life.</p>
+              <ul class="chips"><li><span lang="es">Engranes</span><span lang="en">Gears</span></li><li><span lang="es">Selección de componentes</span><span lang="en">Component selection</span></li></ul>
+            </div>
+          </article>
+
+          <article class="card gcard reveal" data-cat="data">
+            <div class="gmedia contain"><img src="assets/img/projects/wine.webp" alt="Comparación de precisión entre modelos de clasificación" loading="lazy" data-zoom></div>
+            <div class="gbody">
+              <span class="pmeta">Data Mining &amp; Machine Learning · 2025</span>
+              <h3><span lang="es">Clasificación de vinos con machine learning</span><span lang="en">Wine classification with machine learning</span></h3>
+              <p lang="es">Análisis exploratorio y comparación de cinco modelos (regresión logística, KNN, SVM, árbol de decisión y random forest) en Python, con interpretación de las variables más importantes.</p>
+              <p lang="en">Exploratory analysis and a comparison of five models (logistic regression, KNN, SVM, decision tree and random forest) in Python, with an interpretation of the most important features.</p>
+              <ul class="chips"><li>Python</li><li>scikit-learn</li><li>pandas</li></ul>
+              <div class="plinks"><button type="button" data-video="gwCTDUR28oY"><svg><use href="#i-play"/></svg><span lang="es">Presentación</span><span lang="en">Presentation</span></button></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- ================= EXPERIENCIA ================= -->
     <section class="section" id="experiencia">
       <div class="container">
@@ -185,6 +463,26 @@
           </article>
 
           <article class="card job reveal">
+            <div class="job-when"><span class="org">Universidad del Valle de Guatemala</span>
+              <span lang="es">2022 – 2026</span><span lang="en">2022 – 2026</span>
+            </div>
+            <div>
+              <h3><span lang="es">Auxiliar académico</span><span lang="en">Teaching and lab assistant</span></h3>
+              <ul lang="es">
+                <li><strong>Auxiliar de laboratorio, Instrumentación y Automatización Industrial 1</strong> (1.er ciclo 2026): acompañaba los laboratorios de PLC, guiaba a los estudiantes, resolvía dudas y calificaba.</li>
+                <li><strong>Auxiliar de calificación, Electrónica Digital 1</strong> (2.º ciclo 2024): calificaba laboratorios y proyectos de máquinas de estado y de un CPU en FPGA.</li>
+                <li><strong>Auxiliar del laboratorio D-HIVE</strong> (2.º ciclo 2022 – 1.er ciclo 2023): desarrollé el sistema de registro y control de acceso del laboratorio.</li>
+              </ul>
+              <ul lang="en">
+                <li><strong>Lab assistant, Industrial Instrumentation &amp; Automation 1</strong> (Spring 2026): supported the PLC labs, guided students, answered questions and graded.</li>
+                <li><strong>Grader, Digital Electronics 1</strong> (Fall 2024): graded labs and projects on state machines and an FPGA CPU.</li>
+                <li><strong>D-HIVE lab assistant</strong> (Fall 2022 – Spring 2023): built the lab's sign-in and access control system.</li>
+              </ul>
+              <ul class="chips"><li>PLC</li><li><span lang="es">Docencia</span><span lang="en">Teaching</span></li><li><span lang="es">Control de acceso</span><span lang="en">Access control</span></li></ul>
+            </div>
+          </article>
+
+          <article class="card job reveal">
             <div class="job-when"><span class="org">Parts4Heating.com</span>
               <span lang="es">nov 2024 – nov 2025</span><span lang="en">Nov 2024 – Nov 2025</span>
             </div>
@@ -217,48 +515,6 @@
       </div>
     </section>
 
-    <!-- ================= OTROS PROYECTOS ================= -->
-    <section class="section" id="otros">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <span class="kicker"><span lang="es">Universidad</span><span lang="en">University</span></span>
-            <h2><span lang="es">Otros proyectos</span><span lang="en">Other projects</span></h2>
-          </div>
-        </div>
-        <div class="grid-projects">
-          <article class="card mini reveal">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/><circle cx="12" cy="16" r="1.4"/></svg></div>
-            <h3><span lang="es">Control de acceso D-HIVE</span><span lang="en">D-HIVE access control</span></h3>
-            <p lang="es">Sistema de control de acceso para el laboratorio D-HIVE de la UVG.</p>
-            <p lang="en">Access control system for UVG's D-HIVE lab.</p>
-            <ul class="chips"><li><span lang="es">Embebidos</span><span lang="en">Embedded</span></li></ul>
-          </article>
-          <article class="card mini reveal">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v5l-4 7a4 4 0 0 0 3.5 6h5A4 4 0 0 0 18 15l-4-7V3"/><path d="M7.5 14h9"/></svg></div>
-            <h3><span lang="es">Dosificadora de líquidos viscosos</span><span lang="en">Viscous liquid dispenser</span></h3>
-            <p lang="es">Máquina que dosifica líquidos viscosos de forma controlada.</p>
-            <p lang="en">A machine that dispenses viscous liquids in controlled amounts.</p>
-            <ul class="chips"><li><span lang="es">Automatización</span><span lang="en">Automation</span></li></ul>
-          </article>
-          <article class="card mini reveal">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="10" rx="2"/><circle cx="8" cy="19" r="2"/><circle cx="16" cy="19" r="2"/><path d="M9 11h.01M15 11h.01M12 3v4"/></svg></div>
-            <h3><span lang="es">Robot sumo por Bluetooth</span><span lang="en">Bluetooth sumo robot</span></h3>
-            <p lang="es">Robot de sumo controlado de forma inalámbrica por Bluetooth.</p>
-            <p lang="en">Sumo robot controlled wirelessly over Bluetooth.</p>
-            <ul class="chips"><li>Bluetooth</li><li><span lang="es">Robótica</span><span lang="en">Robotics</span></li></ul>
-          </article>
-          <article class="card mini reveal">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3Z"/></svg></div>
-            <h3><span lang="es">Lámpara RGB</span><span lang="en">RGB lamp</span></h3>
-            <p lang="es">Lámpara RGB controlada por microcontrolador.</p>
-            <p lang="en">Microcontroller-driven RGB lamp.</p>
-            <ul class="chips"><li>ATmega328P</li></ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <!-- ================= HABILIDADES ================= -->
     <section class="section" id="habilidades">
       <div class="container">
@@ -270,17 +526,23 @@
         </div>
         <div class="skills">
           <div class="card skill reveal"><h3><span lang="es">Programación</span><span lang="en">Programming</span></h3>
-            <ul class="chips"><li>C</li><li>C++</li><li>Python</li><li>C#</li><li>Arduino IDE</li><li>HTML</li><li>PHP</li></ul></div>
+            <ul class="chips"><li>C</li><li>C++</li><li>Python</li><li>MATLAB</li><li>Verilog</li><li>Assembly (PIC)</li><li>C#</li><li>Git</li></ul></div>
           <div class="card skill reveal"><h3><span lang="es">Microcontroladores</span><span lang="en">Microcontrollers</span></h3>
-            <ul class="chips"><li>STM32 Nucleo-F446RE</li><li>Arduino Portenta H7</li><li>ESP32</li><li>ATmega328P</li></ul></div>
+            <ul class="chips"><li>STM32 (CubeIDE / HAL)</li><li>Arduino Portenta H7</li><li>ESP32</li><li>PIC</li><li>ATmega328P</li><li>FPGA</li></ul></div>
           <div class="card skill reveal"><h3><span lang="es">Control y robótica</span><span lang="en">Control &amp; robotics</span></h3>
             <ul class="chips"><li>Denavit-Hartenberg</li><li><span lang="es">Jacobiano</span><span lang="en">Jacobian</span></li><li>Damped Least Squares</li><li>PID</li><li><span lang="es">Trayectorias</span><span lang="en">Trajectories</span></li><li><span lang="es">Homografía</span><span lang="en">Homography</span></li></ul></div>
           <div class="card skill reveal"><h3><span lang="es">Visión e IA</span><span lang="en">Vision &amp; AI</span></h3>
-            <ul class="chips"><li>YOLO11-seg</li><li><span lang="es">Entrenamiento en Python</span><span lang="en">Training in Python</span></li><li>HuskyLens 2</li><li>ONNX</li></ul></div>
-          <div class="card skill reveal"><h3><span lang="es">Electrónica y comunicación</span><span lang="en">Electronics &amp; comms</span></h3>
-            <ul class="chips"><li><span lang="es">Prototipado</span><span lang="en">Prototyping</span></li><li><span lang="es">Diagnóstico de fallas</span><span lang="en">Fault diagnosis</span></li><li>UART</li><li>SPI</li><li>WiFi / UDP</li><li>Bluetooth</li><li>NFC</li></ul></div>
+            <ul class="chips"><li>YOLO11-seg</li><li>PyTorch</li><li>OpenCV</li><li>scikit-learn</li><li>pandas</li><li>HuskyLens 2</li></ul></div>
+          <div class="card skill reveal"><h3><span lang="es">Electrónica y PCB</span><span lang="en">Electronics &amp; PCB</span></h3>
+            <ul class="chips"><li>Altium Designer</li><li>Multisim</li><li>LabVIEW</li><li><span lang="es">Prototipado</span><span lang="en">Prototyping</span></li><li><span lang="es">Soldadura</span><span lang="en">Soldering</span></li><li><span lang="es">Diagnóstico de fallas</span><span lang="en">Fault diagnosis</span></li></ul></div>
+          <div class="card skill reveal"><h3><span lang="es">Comunicación y periféricos</span><span lang="en">Comms &amp; peripherals</span></h3>
+            <ul class="chips"><li>UART</li><li>SPI</li><li>I2C</li><li>ADC / DAC</li><li>PWM</li><li>WiFi / UDP</li><li>Bluetooth</li><li>NFC</li></ul></div>
+          <div class="card skill reveal"><h3><span lang="es">Automatización industrial</span><span lang="en">Industrial automation</span></h3>
+            <ul class="chips"><li>PLC Siemens (TIA Portal)</li><li>STL / Ladder</li><li>HMI</li><li>VFD</li><li><span lang="es">Neumática</span><span lang="en">Pneumatics</span></li></ul></div>
+          <div class="card skill reveal"><h3><span lang="es">Control y simulación</span><span lang="en">Control &amp; simulation</span></h3>
+            <ul class="chips"><li>PID</li><li><span lang="es">Espacio de estados</span><span lang="en">State space</span></li><li>MATLAB</li><li>Simulink</li><li>Simscape</li></ul></div>
           <div class="card skill reveal"><h3><span lang="es">Diseño y manufactura</span><span lang="en">Design &amp; manufacturing</span></h3>
-            <ul class="chips"><li>Autodesk Inventor</li><li><span lang="es">Impresión 3D</span><span lang="en">3D printing</span></li><li><span lang="es">Torno</span><span lang="en">Lathe</span></li><li><span lang="es">Fresa</span><span lang="en">Milling</span></li><li>Blender</li></ul></div>
+            <ul class="chips"><li>Autodesk Inventor</li><li>FEA</li><li><span lang="es">Planos ASME Y14.5</span><span lang="en">ASME Y14.5 drawings</span></li><li>AGMA</li><li>Inventor CAM / CNC</li><li><span lang="es">Impresión 3D</span><span lang="en">3D printing</span></li><li><span lang="es">Torno y fresa</span><span lang="en">Lathe &amp; mill</span></li></ul></div>
         </div>
       </div>
     </section>

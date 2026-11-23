@@ -265,6 +265,83 @@ section { scroll-margin-top: 70px; }
 .mini p { color: var(--ink-2); font-size: 15px; margin-bottom: 14px; }
 .mini .chips { margin: auto 0 0; }
 
+/* ---------- Proyectos destacados ---------- */
+.pgrid { display: grid; gap: 18px; }
+@media (min-width: 900px) { .pgrid { grid-template-columns: 1fr 1fr; } }
+.pcard { overflow: hidden; display: flex; flex-direction: column; }
+.pmedia { position: relative; aspect-ratio: 16 / 10; background: var(--navy-900); overflow: hidden; }
+.pmedia img, .pmedia video { width: 100%; height: 100%; object-fit: cover; }
+.ptag {
+  position: absolute; left: 12px; top: 12px; background: rgba(8, 17, 31, .8); color: #fff;
+  font: 600 11px/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; padding: 7px 10px; border-radius: 7px;
+}
+.play {
+  position: absolute; right: 12px; bottom: 12px; display: inline-flex; align-items: center; gap: 8px;
+  background: var(--sky); color: var(--navy-950); border: 0; border-radius: 999px; padding: 9px 15px 9px 11px;
+  font: 600 14px/1 var(--font); cursor: pointer; box-shadow: 0 6px 20px rgba(0, 0, 0, .35); transition: transform .15s;
+}
+.play:hover { transform: scale(1.04); }
+.play svg { width: 18px; height: 18px; }
+.pbody { padding: 22px 22px 24px; display: flex; flex-direction: column; flex: 1; }
+@media (min-width: 720px) { .pbody { padding: 24px 28px 28px; } }
+.pmeta { display: block; font: 500 12.5px/1.4 var(--mono); color: var(--muted); margin-bottom: 8px; }
+.pbody h3 { font-size: 1.3rem; }
+.pbody p { color: var(--ink-2); font-size: 15.5px; }
+.pbody p strong, .gbody p strong { color: var(--ink); }
+.pbody .chips { margin-bottom: 16px; }
+.pthumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: auto; }
+.pthumbs.sm { grid-template-columns: repeat(2, 1fr); margin-top: 12px; }
+.pthumbs img {
+  width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 8px; border: 1px solid var(--line);
+  background: #fff; cursor: zoom-in; transition: transform .15s;
+}
+.pthumbs img:hover { transform: translateY(-2px); }
+.plinks { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; }
+.plinks a, .plinks button {
+  display: inline-flex; align-items: center; gap: 7px; padding: 7px 12px; border-radius: 8px;
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink); font: 600 13.5px/1 var(--font);
+  text-decoration: none; cursor: pointer;
+}
+.plinks a:hover, .plinks button:hover { border-color: var(--accent-ink); color: var(--accent-ink); }
+.plinks svg { width: 15px; height: 15px; }
+
+/* ---------- Más proyectos (cuadrícula con filtros) ---------- */
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+.filters button {
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink-2); padding: 8px 14px; border-radius: 999px;
+  font: 600 13.5px/1 var(--font); cursor: pointer;
+}
+.filters button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+:root[data-theme="dark"] .filters button[aria-pressed="true"] { color: var(--navy-950); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .filters button[aria-pressed="true"] { color: var(--navy-950); } }
+.ggrid { display: grid; gap: 14px; }
+@media (min-width: 640px) { .ggrid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .ggrid { grid-template-columns: repeat(3, 1fr); } }
+.gcard { overflow: hidden; display: flex; flex-direction: column; }
+.gcard[hidden] { display: none; }
+.gmedia { aspect-ratio: 16 / 10; background: var(--navy-900); overflow: hidden; }
+.gmedia img { width: 100%; height: 100%; object-fit: cover; cursor: zoom-in; }
+.gmedia.contain { background: #fff; border-bottom: 1px solid var(--line); }
+.gmedia.contain img { object-fit: contain; padding: 10px; }
+.gbody { padding: 18px 20px 20px; display: flex; flex-direction: column; flex: 1; }
+.gbody h3 { font-size: 1.08rem; margin-bottom: 8px; }
+.gbody p { color: var(--ink-2); font-size: 14.5px; margin-bottom: 14px; }
+.gbody .chips { margin-bottom: 14px; }
+.gbody .plinks { margin: auto 0 0; }
+
+/* ---------- Visor de video ---------- */
+dialog.vbox { border: 0; padding: 0; background: transparent; width: min(960px, 94vw); max-height: 92vh; overflow: visible; }
+dialog.vbox::backdrop { background: rgba(5, 10, 20, .9); }
+dialog.vbox .frame16 { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #000; border-radius: 12px; overflow: hidden; }
+dialog.vbox.vertical { width: min(400px, 92vw); }
+dialog.vbox.vertical .frame16 { aspect-ratio: 9 / 16; max-height: 84vh; }
+dialog.vbox iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+dialog.vbox .vclose {
+  position: fixed; top: 14px; right: 14px; width: 40px; height: 40px; border-radius: 50%; border: 0;
+  background: rgba(255,255,255,.14); color: #fff; font-size: 22px; cursor: pointer;
+}
+dialog.vbox a { display: block; text-align: center; margin-top: 10px; color: var(--sky); font: 13px var(--mono); }
+
 /* ---------- Habilidades ---------- */
 .skills { display: grid; gap: 14px; }
 @media (min-width: 700px) { .skills { grid-template-columns: repeat(2, 1fr); } }
